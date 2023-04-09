@@ -1,24 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { FruitsContext } from './context/FruitsContext';
+import { ACTION_TYPES } from './context/FruitsContext/reducer';
 function App() {
+
+  const { state, dispatch } = FruitsContext()
+  console.log(state);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <h1>Count, {state.count}</h1>
+      <button onClick={() => dispatch({ type: ACTION_TYPES.INCREMENT_QUANTITY })}>+</button>
+      <button onClick={() => dispatch({ type: ACTION_TYPES.DECREMENT_QUANTITY })}>-</button>
+
+    </>
+
   );
 }
 

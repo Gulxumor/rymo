@@ -1,0 +1,23 @@
+import one from "../../assets/images/insta/1.jpg"
+import two from "../../assets/images/insta/2.jpg"
+import three from "../../assets/images/insta/3.jpg"
+import four from "../../assets/images/insta/4.jpg"
+import five from "../../assets/images/insta/5.jpg"
+
+export const featured = [
+    { id: 1, name: "men", featured: true },
+    { id: 2, name: "women", featured: true },
+    { id: 3, name: "boys", featured: true },
+    { id: 4, name: "girls", featured: true },
+    { id: 5, name: "new arrivals", featured: true },
+    { id: 6, name: "shoes", featured: true },
+    { id: 7, name: "clothes", featured: true },
+]
+
+export const instagram = [
+    { id: 1, img: one },
+    { id: 1, img: two },
+    { id: 1, img: three },
+    { id: 1, img: four },
+    { id: 1, img: five },
+]
