@@ -3,14 +3,14 @@
 * {
   margin: 0;
   padding: 0;
-    box-sizing: border-box;
+  box-sizing: border-box;
     font-family: var(--font-family);
 }
 
 :root {
   --white: #fff;
   --orange: rgb(251, 119, 75);
-  --black: rgb(51, 51, 51);
+  --black: rgb(2, 1, 1);
   --gray: rgb(97, 99, 101);
   --font-family: "Poppins", sans-serif;
 }

@@ -1,15 +1,14 @@
 import styled from 'styled-components';
 
 const Container = styled.div`
-    /* max-width: 1440px; */
+    width: 100vw;
+    height: 80px;
     margin: 0 auto;
     padding: 0 100px;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    right: auto;
-    left: auto;
     background-color: var(--white);
+    position: sticky;
+    z-index: 999;
+    top: 0;
 
 .nav_link{
     text-decoration: none;
@@ -21,12 +20,13 @@ const Container = styled.div`
 }
 `;
 const Wrapper = styled.div`
+    max-width:1440px;
     width: 100%;
-    height: 80px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     font-weight: 700;
+    margin: 0 auto;
 `;
 const NavItems = styled.ul`
     display: flex;
@@ -58,6 +58,16 @@ const Text = styled.p`
     height: 33px;
     font-size: 22px;
     width: 66px;
+    text-decoration-style: solid;
 
 `
 export { Container, Text, Img, Input, Wrapper, Icons, NavItem, NavItems };
+
+
+/*  Media
+@media(max-width:1300px) {}
+@media(max-width:1200px) {}
+@media(max-width:1050px) {}
+@media(max-width:767px) {}
+@media(max-width:428px) {}
+*/

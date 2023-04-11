@@ -1,12 +1,9 @@
 import styled from 'styled-components';
 
 const Container = styled.div`
-max-width: 1550px;
 display: flex;
 width: 100%;
 margin: 0 auto;
-
-
 `;
 const Img = styled.img`
 width: 200px;
@@ -20,7 +17,8 @@ margin: 0 auto;
 
 `;
 const LogoWrapper = styled.div`
-    margin: 50px 100px 0 100px;
+    max-width: 1440px;
+    margin:50px auto 0 auto;
 `
 
 export { Container, LogoWrapper, Img };

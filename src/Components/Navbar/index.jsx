@@ -122,6 +122,7 @@ const Navbar = () => {
             <NavLink
               style={({ isActive }) => ({
                 color: isActive ? "var(--orange)" : "var(--grey)",
+                fontWeight: isActive ? `800` : "500",
               })}
               className="nav_link"
               to="/"
@@ -131,6 +132,7 @@ const Navbar = () => {
             <NavLink
               style={({ isActive }) => ({
                 color: isActive ? "var(--orange)" : "var(--grey)",
+                fontWeight: isActive ? `800` : "500",
               })}
               className="nav_link"
               to="/shop"
@@ -154,7 +156,7 @@ const Navbar = () => {
             placement="bottom"
           >
             <NavLink onClick={(e) => e.preventDefault()}>
-                <BsPersonCircle className="nav_icon" />
+              <BsPersonCircle className="nav_icon" />
             </NavLink>
           </Dropdown>
         </Icons>

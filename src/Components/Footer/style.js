@@ -5,20 +5,22 @@ const Img = styled.img`
     height:${({ w }) => w ? "29px" : "60px"};
 `;
 const Container = styled.div`
-    max-width: 1550px;
-    width: 100%;
+    width: 99vw;
     background-color: #212121;
     height: 540px; 
-    text-transform:uppercase;
-
+    text-transform: uppercase;
+    margin: 10px auto 0 auto;
+    
     .div{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
     }
 `;
 const Wrapper = styled.div`
+    max-width: 1440px;
+    width:100%
     height: 540px;
-    margin: auto;
+    margin: 0 auto;
     padding: 50px 131px 0 131px;
     display: flex;
     flex-direction:column;

@@ -10,36 +10,36 @@ const Header = styled.p`
     margin: ${({ h }) => h ? "" : "20px 0"};
 `
 const ImageWrapper = styled.div`
-display: flex;
-flex-wrap: wrap;
-gap: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
 `
 const Container = styled.div`
-max-width: 1440px;
-width: 100%;
-margin:50px  auto;
-display: flex;
+    width: 100%;
+    margin:0px  auto;
+    display: flex;
 `;
 const Wrapper = styled.div`
-display: flex;
-flex-direction: column;
-margin: 0 auto;
+    max-width: 1440px;
+    display: flex;
+    flex-direction: column;
+    margin: 50px auto 0 auto;
 `;
 
 // ==========================================Card=====================================
 
 
 export const CardImg = styled.img`
-width: 280px;
-height: ${({ small }) => small ? '280px' : '315px'};
-margin-right:20px ;
+    width: 280px;
+    height: ${({ small }) => small ? '280px' : '315px'};
+    margin-right:20px ;
 `
 export const BtnWrapper = styled.p`
-display: none;
+    display: none;
 `
 export const CardContainer = styled.div`
-width: 280px;
-height: 520px;
+    width: 280px;
+    height: 520px;
 &:hover ${CardImg} {
     opacity:0.7;
 }
@@ -48,17 +48,17 @@ height: 520px;
 }
 `
 export const CardWrapper = styled.div`
-display: flex;
-flex-direction: column;
-justify-content:center;
-align-items:center;
-padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items:center;
+    padding: 20px 0;
 `
-export const Text = styled.h4`
-padding: 10px 0;
+export const Text = styled.p`
+    margin: 10px 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    height: 26px;
+    width: 120px;
 `
-
-
-
-
 export { Container, Title, Wrapper, Header, ImageWrapper };

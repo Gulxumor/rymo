@@ -21,16 +21,28 @@ const Wrapper = styled.div`
     justify-content:center;
 `;
 
-const TopText = styled.h4``;
+const TopText = styled.h4`
+    font-size: 1.1rem;
+    font-weight: 600;
+    height: 26px;
+    width: 835px;
+`;
 const Title = styled.h1`
     padding: 15px 0;
+    font-weight: 900;
+    font-size: 40px;
+    height: 60px;
+    width: 835px;
+
 `;
 const Span = styled.span`
     color: var(--orange);
 `;
 const Text = styled.p`
+    height: 48px;
     max-width: 380px;
-    padding-bottom:15px ;
+    margin:15px 0 ;
+
 `
 
 export { Container, Text, Span, Title, TopText, Wrapper };

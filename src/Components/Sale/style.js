@@ -10,6 +10,7 @@ background-image: url(${Bg});
 background-attachment: fixed;
 color: var(--white);
 `;
+
 const Wrapper = styled.div`
     width:100%;
     /* height: calc(100vh - 20px); */
@@ -23,11 +24,18 @@ const Wrapper = styled.div`
 `;
 
 const Title = styled.h1`
+    width: 450px;
+    height: 125px;
+    font-weight: 900;
     padding: 15px 0;
+    font-size: 42px;
+    margin-bottom: 30px;
 `;
 const Text = styled.p`
-    max-width: 380px;
-    padding-bottom:15px;
+    font-size: 22px;
+    font-weight: 600;
+    height: 33px;
+    width: 825px;
 `
 
 export { Container, Text, Title, Wrapper };

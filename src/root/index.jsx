@@ -1,29 +1,30 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
-import Hero from "../Components/Hero";
+import { Navigate, Route, Routes } from "react-router-dom";
 import Navbar from "../Components/Navbar";
-import Brands from "../Components/Brands";
-import NewArrivals from "../Components/NewArrivals";
-import Sale from "../Components/Sale";
-import Watches from "../Components/Watches";
 import Footer from "../Components/Footer";
-import Shoes from "../Components/Shoes";
+import { navLink } from "../mock/Navbar";
 
 const Root = () => {
+  const token = JSON.parse(localStorage.getItem("token"));
+
   return (
     <>
-      {/* <Routes>
+      <Routes>
         <Route path="/" element={<Navbar />}>
-          bu yerda coponentlar map bolishi kerak. yangi route yozib chiqish kk, toq tag qilib
+          {navLink.map(
+            ({ id, path, isPrivate, element }) =>
+              !isPrivate && <Route key={id} path={path} element={element} />
+          )}
+          {navLink?.map(
+            ({ id, to, element, isPrivate }) =>
+              isPrivate && (
+                <Route
+                  key={id} path={to}element={token ? element : <Navigate to={"/sign-up"} />}/>
+              )
+          )}
         </Route>
-      </Routes> */}
-      <Navbar />
-      <Hero />
-      <Brands />
-      <NewArrivals />
-      <Sale />
-      <Watches />
-      <Shoes />
+      </Routes>
+
       <Footer />
     </>
   );

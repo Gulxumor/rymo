@@ -16,8 +16,8 @@ export const featured = [
 
 export const instagram = [
     { id: 1, img: one },
-    { id: 1, img: two },
-    { id: 1, img: three },
-    { id: 1, img: four },
-    { id: 1, img: five },
+    { id: 2, img: two },
+    { id: 3, img: three },
+    { id: 4, img: four },
+    { id: 5, img: five },
 ]
