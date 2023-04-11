@@ -1,93 +1,109 @@
 import React, { useState } from "react";
-import { Container, NavItems, NavItem, Icons, Input } from "./style";
-import logo from "../../assets/images/logo/rymo-logo-black.png";
 import { NavLink, useNavigate } from "react-router-dom";
 import { BiSearch } from "react-icons/bi";
 import { AiOutlineHeart } from "react-icons/ai";
 import { MdShoppingBasket } from "react-icons/md";
 import { BsPersonCircle } from "react-icons/bs";
 import { FiLogOut } from "react-icons/fi";
-import { Modal, Drawer, Space, Dropdown } from "antd";
+import { Modal, Drawer, Dropdown } from "antd";
+import { Button } from "../Generics/Button";
+import logo from "../../assets/images/logo/rymo-logo-black.png";
+import {
+  Container,
+  NavItems,
+  NavItem,
+  Icons,
+  Input,
+  Wrapper,
+  Img,
+  Text,
+} from "./style";
 
-  const Navbar = () => {
-    const navigate = useNavigate();
+const Navbar = () => {
+  const navigate = useNavigate();
 
-    const [open, setOpen] = useState(false);
-    const [opening, setOpening] = useState(false);
-    // ////
-    const showDrawer = () => {
-      setOpening(true);
-    };
-
-    const onClose = () => {
-      setOpening(false);
-    };
-    // ////
-    const items = [
-      {
-        label: <a href="https://www.antgroup.com">Profile</a>,
-        key: "0",
-      },
-      {
-        label: <a href="https://www.aliyun.com">Sign In</a>,
-        key: "1",
-      },
-      {
-        label: <a href="https://www.aliyun.com">Sign Up</a>,
-        key: "2",
-      },
-      {
-        type: "divider",
-      },
-      {
-        label: (
-          <a
-            style={{ display: "flex", alignItems: "center" }}
-            href="https://www.aliyun.com"
-          >
-            <pre>
-              <FiLogOut /> Log Out
-            </pre>
-          </a>
-        ),
-        key: "3",
-      },
-    ];
-
-    return (
-      <Container>
-        {/* Search */}
-        <Modal
-          title="Search Product"
-          centered
-          open={open}
-          onOk={() => setOpen(false)}
-          onCancel={() => setOpen(false)}
-          width={1000}
+  const [open, setOpen] = useState(false);
+  const [opening, setOpening] = useState(false);
+  // =====================
+  const showDrawer = () => {
+    setOpening(true);
+  };
+  const onClose = () => {
+    setOpening(false);
+  };
+  // =====================
+  const items = [
+    {
+      label: <div onClick={() => navigate("/profile")}>Profile</div>,
+      key: "0",
+    },
+    {
+      label: <div onClick={() => navigate("/sign-in")}>Sign In</div>,
+      key: "1",
+    },
+    {
+      label: <div onClick={() => navigate("/sign-up")}>Sign Up</div>,
+      key: "2",
+    },
+    {
+      type: "divider",
+    },
+    {
+      label: (
+        <div
+          style={{ display: "flex", alignItems: "center" }}
+          onClick={() => localStorage.removeItem("token")}
         >
-          <Input />
-        </Modal>
-        {/* Search */}
+          <p>
+            <FiLogOut /> Log Out
+          </p>
+        </div>
+      ),
+      key: "3",
+    },
+  ];
 
-        {/* Shop */}
-        <Drawer
-          title="Basic Drawer"
-          placement="right"
-          onClose={onClose}
-          open={opening}
-        >
-          <p>Some contents...</p>
-          <p>Some contents...</p>
-          <p>Some contents...</p>
-        </Drawer>
-        {/* Shop */}
+  return (
+    <Container>
+      {/* Search */}
+      <Modal
+        title="Search Product"
+        top
+        open={open}
+        onOk={() => setOpen(false)}
+        onCancel={() => setOpen(false)}
+        width={1000}
+      >
+        <Input type="text" placeholder="Search..." />
+      </Modal>
+      {/* Search */}
+      <Drawer
+        title="Products"
+        placement="right"
+        onClose={onClose}
+        open={opening}
+      >
+        <hr />
+        <p>No Products Yet</p>
+        <p> Cart Totals</p>
+        <hr />
+        <div className="footer">
+          <hr />
+          <div>
+            <p>Total</p>
+            <p>$0.00</p>
+          </div>
+          <Button>Proceed to checkout</Button>
+          <Button>Continue shopping</Button>
+        </div>
+      </Drawer>
 
-        <div>
-          <img src={logo} alt="logo" onClick={() => navigate("/")} />
-          <NavItems>
-            <NavItem>
-              {/* map qilish joyi */}
-              {/* {NavLink.map(
+      <Wrapper>
+        <Img src={logo} onClick={() => navigate("/")} />
+        <NavItems>
+          <NavItem>
+            {/* map qilish joyi */}
+            {/* {NavLink.map(
               ({ id, title, hidden, path }) =>
                 !hidden && (
                   <NavLink
@@ -99,53 +115,52 @@ import { Modal, Drawer, Space, Dropdown } from "antd";
                     className="nav_link"
                     to={path}
                   >
-                    {title}
+                    <Text>{title}</Text>
                   </NavLink>
                 )
             )} */}
-              <NavLink
-                style={({ isActive }) => ({
-                  color: isActive ? "var(--orange)" : "var(--grey)",
-                  fontWeight: isActive ? `800` : "500",
-                })}
-                className="nav_link"
-                to="/"
-              >
-                Home
-              </NavLink>
-              <NavLink
-                style={({ isActive }) => ({
-                  color: isActive ? "var(--orange)" : "var(--grey)",
-                  fontWeight: isActive ? `800` : "500",
-                })}
-                className="nav_link"
-                to="/"
-              >
-                Shop
-              </NavLink>
-            </NavItem>
-          </NavItems>
-          <Icons>
-            <BiSearch onClick={() => setOpen(true)} className="nav_icon" />
-            <AiOutlineHeart className="nav_icon" />
-            <MdShoppingBasket onClick={showDrawer} className="nav_icon" />
-            <Dropdown
-              menu={{
-                items,
-              }}
-              trigger={["click"]}
-              placement="bottom"
+            <NavLink
+              style={({ isActive }) => ({
+                color: isActive ? "var(--orange)" : "var(--grey)",
+              })}
+              className="nav_link"
+              to="/"
             >
-              <a onClick={(e) => e.preventDefault()} href>
-                <Space>
-                  <BsPersonCircle className="nav_icon" />
-                </Space>
-              </a>
-            </Dropdown>
-          </Icons>
-        </div>
-      </Container>
-    );
-  };
+              <Text> Home</Text>
+            </NavLink>
+            <NavLink
+              style={({ isActive }) => ({
+                color: isActive ? "var(--orange)" : "var(--grey)",
+              })}
+              className="nav_link"
+              to="/shop"
+            >
+              <Text> Shop</Text>
+            </NavLink>
+          </NavItem>
+        </NavItems>
+        <Icons>
+          <BiSearch onClick={() => setOpen(true)} className="nav_icon" />
+          <AiOutlineHeart
+            className="nav_icon"
+            onClick={() => navigate("/wishlist")}
+          />
+          <MdShoppingBasket onClick={showDrawer} className="nav_icon" />
+          <Dropdown
+            menu={{
+              items,
+            }}
+            trigger={["click"]}
+            placement="bottom"
+          >
+            <NavLink onClick={(e) => e.preventDefault()}>
+                <BsPersonCircle className="nav_icon" />
+            </NavLink>
+          </Dropdown>
+        </Icons>
+      </Wrapper>
+    </Container>
+  );
+};
 
 export default Navbar;

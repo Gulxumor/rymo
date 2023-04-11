@@ -12,24 +12,13 @@ const Header = styled.p`
 const ImageWrapper = styled.div`
 display: flex;
 flex-wrap: wrap;
-`
-const Div = styled.div`
-display: flex;
-flex-direction: column;
 gap: 20px;
-margin: 20px 0 0 20px;
 `
 const Container = styled.div`
 max-width: 1440px;
 width: 100%;
-margin: auto;
+margin:50px  auto;
 display: flex;
-
-.rate{
-    width: 100%;
-    margin: 0 auto;
-}
-
 `;
 const Wrapper = styled.div`
 display: flex;
@@ -48,7 +37,6 @@ margin-right:20px ;
 export const BtnWrapper = styled.p`
 display: none;
 `
-
 export const CardContainer = styled.div`
 width: 280px;
 height: 520px;
@@ -73,4 +61,4 @@ padding: 10px 0;
 
 
 
-export { Container, Div, Title, Wrapper, Header, ImageWrapper };
+export { Container, Title, Wrapper, Header, ImageWrapper };

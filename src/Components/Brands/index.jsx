@@ -1,14 +1,16 @@
 import React from "react";
 import { logo } from "../../mock/logo";
-import { Container, Img } from "./style";
+import { Container, Img, LogoWrapper } from "./style";
 
 const Brands = () => {
   return (
     <Container>
-      {logo.map(
-        ({ id, img, hidden }) =>
-          !hidden && <Img key={id} src={img} alt="brands" />
-      )}
+      <LogoWrapper>
+        {logo.map(
+          ({ id, img, hidden }) =>
+            !hidden && <Img key={id} src={img} alt="brands" />
+        )}
+      </LogoWrapper>
     </Container>
   );
 };
