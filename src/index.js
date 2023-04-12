@@ -8,9 +8,9 @@ import Root from './root';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  // <React.StrictMode>
+  <React.StrictMode>
     <BrowserRouter>
       <Root />
     </BrowserRouter>
-  // </React.StrictMode>
+  </React.StrictMode>
 );

@@ -4,13 +4,14 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-    font-family: var(--font-family);
+  font-family: var(--font-family);
 }
 
 :root {
-  --white: #fff;
+  --white: rgb(255, 255, 255);
   --orange: rgb(251, 119, 75);
   --black: rgb(2, 1, 1);
   --gray: rgb(97, 99, 101);
+  --blue: rgb(0, 0, 255);
   --font-family: "Poppins", sans-serif;
 }

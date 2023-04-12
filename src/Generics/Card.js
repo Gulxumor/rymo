@@ -7,9 +7,9 @@ import {
   CardImg,
   CardWrapper,
   Text,
-} from "../NewArrivals/style";
+} from "../Components/NewArrivals/style";
 
-const Card = ({ image, rate, title, price }) => {
+const Card = ({ image, title, price }) => {
   return (
     <CardContainer>
       <CardImg small src={image} alt="arrival" />

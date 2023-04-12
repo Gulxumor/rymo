@@ -1,8 +1,8 @@
-import one from "../../assets/images/insta/1.jpg"
-import two from "../../assets/images/insta/2.jpg"
-import three from "../../assets/images/insta/3.jpg"
-import four from "../../assets/images/insta/4.jpg"
-import five from "../../assets/images/insta/5.jpg"
+import one from "../../src/assets/images/insta/1.jpg"
+import two from "../../src/assets/images/insta/2.jpg"
+import three from "../../src/assets/images/insta/3.jpg"
+import four from "../../src/assets/images/insta/4.jpg"
+import five from "../../src/assets/images/insta/5.jpg"
 
 export const featured = [
     { id: 1, name: "men", featured: true },

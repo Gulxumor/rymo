@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Modal } from 'antd';
 
 const Container = styled.div`
     width: 100vw;
@@ -6,9 +7,10 @@ const Container = styled.div`
     margin: 0 auto;
     padding: 0 100px;
     background-color: var(--white);
-    position: sticky;
+    /* position: sticky; */
     z-index: 999;
     top: 0;
+    box-shadow: 0px 0px 23px -2px rgba(0,0,0,0.63);
 
 .nav_link{
     text-decoration: none;
@@ -31,7 +33,7 @@ const Wrapper = styled.div`
 const NavItems = styled.ul`
     display: flex;
     align-items:center;
-    gap: 200px;
+    gap: 50px;
 `
 const NavItem = styled.li`
     list-style-type: none;
@@ -46,6 +48,10 @@ const Icons = styled.div`
     gap: 20px;
     cursor: pointer;
 `
+const Madal = styled(Modal)`
+    width:50%;
+`
+
 const Input = styled.input`
     width: 100%;
     height:40px;
@@ -53,7 +59,9 @@ const Input = styled.input`
     padding: 0 30px;
     font-size: 20px;
 `
-const Img = styled.img``
+const Img = styled.img`
+    margin-top:10px;
+`
 const Text = styled.p`
     height: 33px;
     font-size: 22px;
@@ -61,7 +69,7 @@ const Text = styled.p`
     text-decoration-style: solid;
 
 `
-export { Container, Text, Img, Input, Wrapper, Icons, NavItem, NavItems };
+export { Container, Text, Madal, Img, Input, Wrapper, Icons, NavItem, NavItems };
 
 
 /*  Media

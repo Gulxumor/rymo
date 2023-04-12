@@ -1,15 +1,7 @@
 import styled from "styled-components";
 
 export const Button = styled.button`
-background: ${({ b }) => b ? 'var(--black)' : 'var(--orange)'};
-/* background-color: var(--orange);
-border: none;
-width: 160px;
-height: 40px;
-color:var(--white);
-padding: 0px 18px;
-font-size:20px; */
-
+    background: ${({ b }) => b ? 'var(--black)' : 'var(--orange)'};
     display: flex;
     -webkit-box-align: center;
     align-items: center;
@@ -26,8 +18,7 @@ font-size:20px; */
     line-height: 19px;
     letter-spacing: 0.01em;
     text-transform: uppercase;
-    /* background: rgb(251, 119, 75); */
-    color: rgb(255, 255, 255);
+    color: var(--white);
     transition: transform 0.2s ease-in-out 0s;
 
 :active{

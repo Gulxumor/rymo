@@ -1,4 +1,7 @@
 import React from "react";
+import visa from "../../assets/images/logo/visa.jpg";
+import logo from "../../assets/images/logo/orange.png";
+import { featured, instagram } from "../../utils/footer";
 import {
   Bottom,
   Container,
@@ -10,9 +13,6 @@ import {
   Top,
   Wrapper,
 } from "./style";
-import visa from "../../assets/images/logo/visa.jpg";
-import logo from "../../assets/images/logo/orange.png";
-import { featured, instagram } from "./footer";
 
 const Footer = () => {
   return (

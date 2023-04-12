@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Span, Title, Text, TopText, Wrapper } from "./style";
-import { Button } from "../Generics/Button";
+import { Button } from "../../Generics/Button";
 
 const Hero = () => {
   return (

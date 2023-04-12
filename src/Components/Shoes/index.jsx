@@ -1,6 +1,7 @@
 import React from "react";
-import { products } from "../../mock/newArrivals";
-import Card from "../Generics/Card";
+import { products } from "../../utils/newArrivals";
+import Card from "../../Generics/Card"
+
 import { Header, Container, Wrapper, ImageWrapper } from "../NewArrivals/style";
 
 const Shoes = () => {

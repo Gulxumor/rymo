@@ -1,7 +1,7 @@
 import React from "react";
 // import { Container, Span, Title, Text, Wrapper } from "../Hero/style";
 import { Container, Title, Text, Wrapper } from "./style";
-import { Button } from "../Generics/Button";
+import {Button} from "../../Generics/Button";
 
 const Sale = () => {
   return (

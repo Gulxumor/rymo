@@ -1,13 +1,15 @@
 import React, { useState } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, Outlet, useNavigate } from "react-router-dom";
 import { BiSearch } from "react-icons/bi";
 import { AiOutlineHeart } from "react-icons/ai";
 import { MdShoppingBasket } from "react-icons/md";
 import { BsPersonCircle } from "react-icons/bs";
 import { FiLogOut } from "react-icons/fi";
-import { Modal, Drawer, Dropdown } from "antd";
-import { Button } from "../Generics/Button";
+import { Drawer, Dropdown } from "antd";
+import { Button } from "../../Generics/Button";
 import logo from "../../assets/images/logo/rymo-logo-black.png";
+import { navLink, routes } from "../../utils/Navbar";
+
 import {
   Container,
   NavItems,
@@ -17,6 +19,7 @@ import {
   Wrapper,
   Img,
   Text,
+  Madal,
 } from "./style";
 
 const Navbar = () => {
@@ -26,142 +29,132 @@ const Navbar = () => {
   const [opening, setOpening] = useState(false);
   // =====================
   const showDrawer = () => {
+    navigate(routes.home);
     setOpening(true);
   };
-  const onClose = () => {
-    setOpening(false);
+  // =====================
+  const logout = () => {
+    localStorage.removeItem("token");
+    navigate(routes.home);
   };
   // =====================
+
   const items = [
     {
-      label: <div onClick={() => navigate("/profile")}>Profile</div>,
-      key: "0",
-    },
-    {
-      label: <div onClick={() => navigate("/sign-in")}>Sign In</div>,
       key: "1",
+      label: <div onClick={() => navigate(routes.profile)}>Profile</div>,
     },
     {
-      label: <div onClick={() => navigate("/sign-up")}>Sign Up</div>,
       key: "2",
+      label: <div onClick={() => navigate(routes.signIn)}>Sign In</div>,
+    },
+    {
+      key: "3",
+      label: <div onClick={() => navigate(routes.signUp)}>Sign Up</div>,
     },
     {
       type: "divider",
     },
     {
+      key: "4",
       label: (
-        <div
-          style={{ display: "flex", alignItems: "center" }}
-          onClick={() => localStorage.removeItem("token")}
-        >
+        <div style={{ display: "flex", alignItems: "center" }} onClick={logout}>
           <p>
             <FiLogOut /> Log Out
           </p>
         </div>
       ),
-      key: "3",
     },
   ];
 
   return (
-    <Container>
-      {/* Search */}
-      <Modal
-        title="Search Product"
-        top
-        open={open}
-        onOk={() => setOpen(false)}
-        onCancel={() => setOpen(false)}
-        width={1000}
-      >
-        <Input type="text" placeholder="Search..." />
-      </Modal>
-      {/* Search */}
-      <Drawer
-        title="Products"
-        placement="right"
-        onClose={onClose}
-        open={opening}
-      >
-        <hr />
-        <p>No Products Yet</p>
-        <p> Cart Totals</p>
-        <hr />
-        <div className="footer">
+    <>
+      <Container>
+        {/* Search */}
+        <Madal
+          title="Search Product"
+          top
+          open={open}
+          onOk={() => setOpen(false)}
+          onCancel={() => setOpen(false)}
+          width={1000}
+        >
+          <Input type="text" placeholder="Search..." />
+        </Madal>
+        {/* Search */}
+        <Drawer
+          title="Products"
+          placement="right"
+          onClose={() => setOpening(false)}
+          open={opening}
+        >
           <hr />
-          <div>
-            <p>Total</p>
-            <p>$0.00</p>
+          <p>No Products Yet</p>
+          <p> Cart Totals</p>
+          <div className="footer">
+            <hr />
+            <div>
+              <p>Total</p>
+              <p>$0.00</p>
+            </div>
+            <Button>Proceed to checkout</Button>
+            <Button>Continue shopping</Button>
           </div>
-          <Button>Proceed to checkout</Button>
-          <Button>Continue shopping</Button>
-        </div>
-      </Drawer>
+        </Drawer>
 
-      <Wrapper>
-        <Img src={logo} onClick={() => navigate("/")} />
-        <NavItems>
-          <NavItem>
-            {/* map qilish joyi */}
-            {/* {NavLink.map(
+        <Wrapper>
+          <Img src={logo} onClick={() => navigate(routes.home)} />
+          {/* map qilish joyi */}
+          <NavItems>
+            {navLink.map(
               ({ id, title, hidden, path }) =>
                 !hidden && (
-                  <NavLink
-                    key={id}
-                    style={({ isActive }) => ({
-                      color: isActive ? "var(--orange)" : "var(--grey)",
-                      fontWeight: isActive ? `800` : "500",
-                    })}
-                    className="nav_link"
-                    to={path}
-                  >
-                    <Text>{title}</Text>
-                  </NavLink>
+                  <NavItem key={id}>
+                    <NavLink
+                      style={({ isActive }) => ({
+                        color: isActive ? "var(--orange)" : "var(--grey)",
+                        fontWeight: isActive ? `800` : "500",
+                      })}
+                      className="nav_link"
+                      to={path}
+                    >
+                      <Text>{title}</Text>
+                    </NavLink>
+                  </NavItem>
                 )
-            )} */}
-            <NavLink
-              style={({ isActive }) => ({
-                color: isActive ? "var(--orange)" : "var(--grey)",
-                fontWeight: isActive ? `800` : "500",
-              })}
-              className="nav_link"
-              to="/"
+            )}
+          </NavItems>
+          {/* map qilish joyi */}
+          {/* icons */}
+          <Icons>
+            <select name="select">
+              <option value="en">EN</option>
+              <option value="uz">UZ</option>
+              <option value="ru">RU</option>
+            </select>
+
+            <BiSearch onClick={() => setOpen(true)} className="nav_icon" />
+            <AiOutlineHeart
+              className="nav_icon"
+              onClick={() => navigate("/wishlist")}
+            />
+            <MdShoppingBasket onClick={showDrawer} className="nav_icon" />
+            <Dropdown
+              menu={{
+                items,
+              }}
+              trigger={["click"]}
+              placement="bottom"
             >
-              <Text> Home</Text>
-            </NavLink>
-            <NavLink
-              style={({ isActive }) => ({
-                color: isActive ? "var(--orange)" : "var(--grey)",
-                fontWeight: isActive ? `800` : "500",
-              })}
-              className="nav_link"
-              to="/shop"
-            >
-              <Text> Shop</Text>
-            </NavLink>
-          </NavItem>
-        </NavItems>
-        <Icons>
-          <BiSearch onClick={() => setOpen(true)} className="nav_icon" />
-          <AiOutlineHeart
-            className="nav_icon"
-            onClick={() => navigate("/wishlist")}
-          />
-          <MdShoppingBasket onClick={showDrawer} className="nav_icon" />
-          <Dropdown
-            menu={{
-              items,
-            }}
-            trigger={["click"]}
-            placement="bottom"
-          >
-            <NavLink onClick={(e) => e.preventDefault()}>
-              <BsPersonCircle className="nav_icon" />
-            </NavLink>
-          </Dropdown>
-        </Icons>
-      </Wrapper>
-    </Container>
+              <NavLink onClick={(e) => e.preventDefault()}>
+                <BsPersonCircle className="nav_icon" />
+              </NavLink>
+            </Dropdown>
+          </Icons>
+        </Wrapper>
+      </Container>
+      <Outlet />
+    </>
   );
 };
 

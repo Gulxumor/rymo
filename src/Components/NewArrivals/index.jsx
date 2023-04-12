@@ -1,6 +1,6 @@
 import React from "react";
-import { products } from "../../mock/newArrivals";
-import Card from "../Generics/Card";
+import { products } from "../../utils/newArrivals";
+import Card from "../../Generics/Card";
 import { Container, Header, ImageWrapper, Wrapper } from "./style";
 
 const NewArrivals = () => {
