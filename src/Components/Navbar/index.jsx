@@ -8,8 +8,7 @@ import { FiLogOut } from "react-icons/fi";
 import { Drawer, Dropdown } from "antd";
 import { Button } from "../../Generics/Button";
 import logo from "../../assets/images/logo/rymo-logo-black.png";
-import { navLink, routes } from "../../utils/Navbar";
-
+import useNavigation from "../../utils/Navbar";
 import {
   Container,
   NavItems,
@@ -21,36 +20,38 @@ import {
   Text,
   Madal,
 } from "./style";
+import { useTranslation } from "react-i18next";
 
 const Navbar = () => {
+  const { navLink } = useNavigation();
   const navigate = useNavigate();
 
   const [open, setOpen] = useState(false);
   const [opening, setOpening] = useState(false);
   // =====================
   const showDrawer = () => {
-    navigate(routes.home);
+    navigate("/");
     setOpening(true);
   };
   // =====================
   const logout = () => {
     localStorage.removeItem("token");
-    navigate(routes.home);
+    navigate("/");
   };
   // =====================
 
   const items = [
     {
       key: "1",
-      label: <div onClick={() => navigate(routes.profile)}>Profile</div>,
+      label: <div onClick={() => navigate("/profile")}>Profile</div>,
     },
     {
       key: "2",
-      label: <div onClick={() => navigate(routes.signIn)}>Sign In</div>,
+      label: <div onClick={() => navigate("/sign-in")}>Sign In</div>,
     },
     {
       key: "3",
-      label: <div onClick={() => navigate(routes.signUp)}>Sign Up</div>,
+      label: <div onClick={() => navigate("/sign-up")}>Sign Up</div>,
     },
     {
       type: "divider",
@@ -66,6 +67,7 @@ const Navbar = () => {
       ),
     },
   ];
+  const { t, i18n } = useTranslation();
 
   return (
     <>
@@ -79,7 +81,7 @@ const Navbar = () => {
           onCancel={() => setOpen(false)}
           width={1000}
         >
-          <Input type="text" placeholder="Search..." />
+          <Input type="text" placeholder={t("search")} />
         </Madal>
         {/* Search */}
         <Drawer
@@ -103,10 +105,10 @@ const Navbar = () => {
         </Drawer>
 
         <Wrapper>
-          <Img src={logo} onClick={() => navigate(routes.home)} />
+          <Img src={logo} onClick={() => navigate("/")} />
           {/* map qilish joyi */}
           <NavItems>
-            {navLink.map(
+            {navLink().map(
               ({ id, title, hidden, path }) =>
                 !hidden && (
                   <NavItem key={id}>
@@ -127,7 +129,13 @@ const Navbar = () => {
           {/* map qilish joyi */}
           {/* icons */}
           <Icons>
-            <select name="select">
+            <select
+              defaultValue={localStorage.getItem("locale")}
+              onChange={(e) => {
+                localStorage.setItem("locale", e.target.value);
+                i18n.changeLanguage(e.target.value);
+              }}
+            >
               <option value="en">EN</option>
               <option value="uz">UZ</option>
               <option value="ru">RU</option>

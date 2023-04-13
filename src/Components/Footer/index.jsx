@@ -2,6 +2,8 @@ import React from "react";
 import visa from "../../assets/images/logo/visa.jpg";
 import logo from "../../assets/images/logo/orange.png";
 import { featured, instagram } from "../../utils/footer";
+import { useTranslation } from "react-i18next";
+
 import {
   Bottom,
   Container,
@@ -15,35 +17,34 @@ import {
 } from "./style";
 
 const Footer = () => {
+  const { t } = useTranslation();
+
   return (
     <Container>
       <Wrapper>
         <Top>
           <Div>
             <Img src={logo} alt="logo-orange" />
-            <Text>
-              Fringilla urna porttitor rhoncus dolor purus luctus venenatis
-              lectus magna fringilla diam moecenas ultricies mi eget mauris.
-            </Text>
+            <Text>{t("footer.fringilla")} </Text>
           </Div>
           <Div>
-            <Title>Featured</Title>
+            <Title>{t("footer.featured")}</Title>
             {featured.map(
               ({ featured, name, id }) =>
                 featured && <Text key={id}>{name}</Text>
             )}
           </Div>
           <Div>
-            <Title m>Contact us</Title>
-            <Title>address</Title>
-            <Text>123 street name, city, us</Text>
-            <Title>Phone</Title>
+            <Title m>{t("footer.contact")}</Title>
+            <Title>{t("footer.address")}</Title>
+            <Text>{t("footer.street")}</Text>
+            <Title>{t("footer.phone")}</Title>
             <Text> +358 45 73968551</Text>
-            <Title>email</Title>
+            <Title>{t("footer.email")}</Title>
             <Text>example@gmail.com</Text>
           </Div>
           <Div>
-            <Title m>Instagram</Title>
+            <Title m>{ t("footer.instagram")}</Title>
             <div className="div">
               {instagram.map(({ id, img }) => (
                 <Imgs key={id} src={img} className="img" />
@@ -53,7 +54,7 @@ const Footer = () => {
         </Top>
         <Bottom>
           <Img w src={visa} alt="visa" />
-          <Text>rymo eCommerce @ 2023. All Rights Reserved</Text>
+          <Text>{t("footer.rights")}</Text>
         </Bottom>
       </Wrapper>
     </Container>

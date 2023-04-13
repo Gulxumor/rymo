@@ -1,17 +1,17 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import Card from "../../Generics/Card";
 import { products } from "../../utils/newArrivals";
 import { Header, Container, Wrapper, ImageWrapper } from "../NewArrivals/style";
 
 const Watches = () => {
+  const { t } = useTranslation();
   return (
     <Container>
       <Wrapper>
         <div>
-          <Header h>Best Watches</Header>
-          <Header>
-            Here you can check out our new products with fair price on rymo.
-          </Header>
+          <Header h>{t("watches.best_watches")}</Header>
+          <Header>{t("new_arrivals.description")} </Header>
         </div>
         <ImageWrapper>
           {products.map(

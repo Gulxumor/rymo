@@ -11,9 +11,9 @@ background-image: url(${Bg});
 background-attachment: fixed;
 `;
 const Wrapper = styled.div`
+    max-width: 1440px;
     width:100%;
     height: calc(100vh - 0px);
-    max-width: 1440px;
     margin: auto;
     padding: 0px 131px;
     display: flex;
@@ -25,14 +25,16 @@ const TopText = styled.h4`
     font-size: 1.1rem;
     font-weight: 600;
     height: 26px;
-    width: 835px;
+    width: 100%;
+    max-width: 835px;
 `;
 const Title = styled.h1`
     padding: 15px 0;
     font-weight: 900;
     font-size: 40px;
     height: 60px;
-    width: 835px;
+    width: 100%;
+    max-width: 835px;
 
 `;
 const Span = styled.span`

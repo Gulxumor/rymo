@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Modal } from 'antd';
 
 const Container = styled.div`
-    width: 100vw;
+    width: 100%;
     height: 80px;
     margin: 0 auto;
     padding: 0 100px;

@@ -10,14 +10,14 @@ export const common = css`
     cursor:text;
 `
 const Container = styled.div`
-    width:100vw;
+    width:99%;
     height:450px;
 
 `;
 const Wrapper = styled.div`
     max-width:1440px;
-    margin:0 auto ;
     width:100%;
+    margin:0 auto ;
     display:flex;
     align-items:center;
 `;
@@ -28,7 +28,7 @@ const Div = styled.div`
    align-items: flex-start;
 `;
 const Inner = styled.div`
-    max-width:840px ;
+    max-width:840px;
     display: flex;
     gap:30px;
     margin:0 auto;

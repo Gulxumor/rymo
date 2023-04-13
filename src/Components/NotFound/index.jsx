@@ -1,12 +1,12 @@
-import React from "react";
+import React, { useTransition } from "react";
 import { NavLink } from "react-router-dom";
-import { routes } from "../../utils/Navbar";
 import "./style.css";
 const NotFound = () => {
+  const { t } = useTransition();
   return (
     <div className="not-found">
-      <NavLink to={routes.home}>
-        <button id="notFound-btn"> Go Back</button>
+      <NavLink to={"/"}>
+        <button id="notFound-btn">{t("go_back")}</button>
       </NavLink>
     </div>
   );

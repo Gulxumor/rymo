@@ -1,43 +1,53 @@
 import i18next from "i18next";
-import React from "react";
+import React, { useEffect } from "react";
 import { initReactI18next } from "react-i18next";
 import { Navigate, Route, Routes } from "react-router-dom";
 import Navbar from "../Components/Navbar";
 import NotFound from "../Components/NotFound";
-import { navLink, routes } from "../utils/Navbar";
-import en from "../locale/en";
-import uz from "../locale/uz";
-import ru from "../locale/ru";
+import useNavigation from "../utils/Navbar";
+import { en } from "../locale/en/translation";
+import { uz } from "../locale/uz/translation";
+import { ru } from "../locale/ru/translation";
 
 const Root = () => {
   const token = JSON.parse(localStorage.getItem("token"));
 
+  const { navLink } = useNavigation();
+
+  useEffect(() => {
+    // language ni localstorage ga set qilish
+    if (!localStorage.getItem("locale")) {
+      localStorage.setItem("locale", "uz");
+    }
+  }, []);
+
   i18next.use(initReactI18next).init({
+    //translation
     resources: {
       en: { translation: en },
       uz: { translation: uz },
       ru: { translation: ru },
     },
-    lng: "en",
-    fallback: "en",
+    lng: localStorage.getItem("locale") || "en",
+    fallback: localStorage.getItem("locale") || "en",
   });
 
   return (
     <div>
       <Routes>
         <Route element={<Navbar />}>
-          {navLink?.map(
+          {navLink()?.map(
             ({ id, path, isPrivate, element }) =>
               !isPrivate && <Route key={id} path={path} element={element} />
           )}
 
-          {navLink?.map(
+          {navLink()?.map(
             ({ id, path, element, isPrivate }) =>
               isPrivate && (
                 <Route
                   key={id}
                   path={path}
-                  element={token ? element : <Navigate to={routes.signIn} />}
+                  element={token ? element : <Navigate to={"/sign-in"} />}
                 />
               )
           )}

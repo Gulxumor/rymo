@@ -5,7 +5,7 @@ const Img = styled.img`
     height:${({ w }) => w ? "29px" : "60px"};
 `;
 const Container = styled.div`
-    width: 99vw;
+    width: 100%;
     background-color: #212121;
     height: 540px; 
     text-transform: uppercase;
@@ -18,7 +18,7 @@ const Container = styled.div`
 `;
 const Wrapper = styled.div`
     max-width: 1440px;
-    width:100%
+    width:100%;
     height: 540px;
     margin: 0 auto;
     padding: 50px 131px 0 131px;

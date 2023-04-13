@@ -1,14 +1,13 @@
 import React from "react";
 import { home } from "../../utils/Navbar";
-import { Container } from "./style";
 
 const Home = () => {
   return (
-    <Container>
+    <div>
       {home.map(({ id, element }) => (
         <div key={id}>{element}</div>
       ))}
-    </Container>
+    </div>
   );
 };
 

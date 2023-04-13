@@ -1,11 +1,17 @@
-export const uz = {
+export const ru = {
     nav_links: {
         nav_links_home: "Дом",
         nav_links_shop: "Магазин",
+        nav_links_wishlist: "Список желаний",
+        nav_links_profile: "Профиль",
+        nav_links_signIn: "Войти",
+        nav_links_signUp: "Зарегистрироваться",
     },
     hero: {
         new_arrivals: "Новые поступления",
-        best_practise: "Лучшие практики этого года",
+        best_practise: "Лучшие практики",
+        this_year: " Этого года",
+
         shoomotic: "Shoomotic предлагает вам очень комфортное времяпрепровождение при ходьбе и занятиях спортом.",
         shop_now: "Купить сейчас"
     },
@@ -40,8 +46,21 @@ export const uz = {
         street: "123 KO'CHA NOMI, SHAHAR, AQSH",
         phone: "Телефон",
         email: "Электронная почта",
-        istagram: "Инстаграм",
+        instagram: "Инстаграм",
         rights: "RYMO ECOMMERCE @ 2023. ВСЕ ПРАВА ЗАЩИЩЕНЫ"
     },
-    Software_engineer:"Инженер-программист"
+    sign_up: {
+        login: "Авторизоваться",
+        name: "Имя:",
+        password: "Пароль:",
+        name_placeholder: "Введите ваше имя",
+        email_placeholder: "Введите адрес электронной почты",
+        password_placeholder: "Введите ваш пароль",
+        loading: "Загрузка"
+    },
+    Software_engineer: "Инженер-программист",
+    search: "Поиск",
+    searching: "Идет поиск",
+    go_back: "Возвращаться",
+    buy_now: "Купить сейчас"
 }

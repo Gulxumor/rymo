@@ -11,9 +11,11 @@ import {
   Wrapper,
 } from "./style";
 import logo from "../../assets/images/logo/user.png";
+import { useTranslation } from "react-i18next";
 
 const Profile = () => {
   const user = JSON.parse(localStorage.getItem("token"));
+  const { t } = useTranslation();
 
   return (
     <>
@@ -23,7 +25,7 @@ const Profile = () => {
             <User src={logo} />
             <Div>
               <Name>{user?.username}</Name>
-              <Info>Software Engineer</Info>
+              <Info>{t("Software_engineer")}</Info>
               <Info>{user?.email}</Info>
               <Password>{user?.password}</Password>
             </Div>

@@ -1,15 +1,16 @@
-import React from "react";
 // import { Container, Span, Title, Text, Wrapper } from "../Hero/style";
 import { Container, Title, Text, Wrapper } from "./style";
-import {Button} from "../../Generics/Button";
+import { Button } from "../../Generics/Button";
+import { useTranslation } from "react-i18next";
 
 const Sale = () => {
+  const { t } = useTranslation();
   return (
     <Container>
       <Wrapper>
-        <Text>MID SEASON'S SALE</Text>
-        <Title>Autumn Collection UP TO 20% OFF</Title>
-        <Button>Shop Now</Button>
+        <Text>{t("sale.title")}</Text>
+        <Title>{t("sale.description")}</Title>
+        <Button>{t("hero.shop_now")}</Button>
       </Wrapper>
     </Container>
   );

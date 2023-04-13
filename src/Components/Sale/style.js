@@ -12,10 +12,10 @@ color: var(--white);
 `;
 
 const Wrapper = styled.div`
+    max-width: 1440px;
     width:100%;
     /* height: calc(100vh - 20px); */
     height: 50vh;
-    max-width: 1440px;
     margin: auto;
     padding: 0px 131px;
     display: flex;

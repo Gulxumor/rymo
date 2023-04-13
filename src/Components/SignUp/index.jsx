@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
-import { routes } from "../../utils/Navbar.js";
 import { Button, Container, Input, Text, Title, Wrapper } from "./style.js";
 
 const SignUp = () => {
@@ -23,33 +23,39 @@ const SignUp = () => {
       );
       setLoading(false);
       window.location.reload();
-      navigate(routes.shop);
+      navigate("/shop");
     }, 2000);
   };
+
+  const { t } = useTranslation();
 
   return (
     <Container>
       <Wrapper>
-        <Text>Login</Text>
+        <Text>{t("sign_up.login")}</Text>
         <div>
-          <Title>Name:</Title>
+          <Title>{t("sign_up.name")}</Title>
           <Input placeholder="Enter your name" ref={nameRef} type="text" />
         </div>
         <div>
-          <Title>Email:</Title>
-          <Input placeholder="Enter your email" ref={emailRef} type="email" />
+          <Title>{t("footer.email")}</Title>
+          <Input
+            placeholder={t("sign_up.email_placeholder")}
+            ref={emailRef}
+            type="email"
+          />
         </div>
         <div>
-          <Title>Password:</Title>
+          <Title>{t("sign_up.password")}</Title>
           <Input
-            placeholder="Enter your password"
+            placeholder={t("sign_up.password_placeholder")}
             ref={passwordRef}
             type="password"
           />
         </div>
         <div>
           <Button type="submit" onClick={onSave} id="button">
-            {loading ? "Loading..." : "Login"}
+            {loading ? `${t("sign_up.loading")}...` : t("sign_up.login")}
           </Button>
         </div>
       </Wrapper>

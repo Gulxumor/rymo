@@ -1,11 +1,16 @@
-export const uz = {
+export const en = {
     nav_links: {
         nav_links_home: "Home",
         nav_links_shop: "Shop",
+        nav_links_wishlist: "Wishlist", 
+        nav_links_profile: "Profile",
+        nav_links_signIn: "Sign In",
+        nav_links_signUp: "Sign Up",
     },
     hero: {
         new_arrivals: "New Arrivals",
-        best_practise: "Best Practice This Year",
+        best_practise: "Best Practice",
+        this_year: " This Year",
         shoomotic: "Shoomotic offers your very comfortable time on walking and exercises",
         shop_now: "Shop Now"
     },
@@ -39,9 +44,24 @@ export const uz = {
         address: "address",
         street: "123 STREET NAME, CITY, US",
         phone: "Phone",
-        email: "email",
-        istagram: "Instagram",
+        email: "Email",
+        instagram: "Instagram",
         rights: "RYMO ECOMMERCE @ 2023. ALL RIGHTS RESERVED"
-    }, Software_engineer: "Software Engineer"
+    },
+    sign_up: {
+        login: "Login",
+        name: "Name:",
+        password: "Password:",
+        name_placeholder: "Enter your name",
+        email_placeholder: "Enter your email",
+        password_placeholder: "Enter your password",
+        loading: "Loading"
+
+    },
+    Software_engineer: "Software Engineer",
+    search: "Search",
+    searching: "Searching",
+    go_back: "Go back",
+    buy_now: "Buy Now"
   
 }

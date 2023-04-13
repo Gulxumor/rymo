@@ -2,10 +2,15 @@ export const uz = {
     nav_links: {
         nav_links_home: "Uy",
         nav_links_shop: "Bozor",
+        nav_links_wishlist: "Istaklar roʻyxati",
+        nav_links_profile: "Profil",
+        nav_links_signIn: "Tizimga kirish",
+        nav_links_signUp: "Ro'yxatdan o'tish",
     },
     hero: {
         new_arrivals: "Yangi kelganlar",
-        best_practise: "Bu yilgi eng yaxshi amaliyot",
+        best_practise: "Bu yilgi",
+        this_year: "eng yaxshi amaliyot",
         shoomotic: "Shoomotic sizga yurish va mashqlarda juda qulay vaqtni taklif qiladi",
         shop_now: "Hoziroq harid qilish"
     },
@@ -40,9 +45,23 @@ export const uz = {
         street: "123 KO'CHA NOMI, SHAHAR, AQSH",
         phone: "Raqam",
         email: "Elektron pochta",
-        istagram: "Instagram",
+        instagram: "Instagram",
         rights: "RYMO ECOMMERCE @ 2023. BARCHA HUQUQLAR HIMOYALANGAN"
     },
-    Software_engineer: "Dastur muhandisi"
+    sign_up: {
+        login: "Tizimga kirish",
+        name: "Ism:",
+        password: "Parol:",
+        name_placeholder: "Ismingizni kiriting",
+        email_placeholder: "Elektron pochtangizni kiriting",
+        password_placeholder: "Parolingizni kiriting",
+        loading: "Yuklanmoqda"
+
+    },
+    Software_engineer: "Dastur muhandisi",
+    search: "Qidirish",
+    searching: "Qidirilmoqda",
+    go_back: "Ortga qaytish",
+    buy_now: "Hoziroq harid qilish",
 
 }

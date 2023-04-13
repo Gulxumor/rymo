@@ -1,19 +1,19 @@
 import React from "react";
 import { Container, Span, Title, Text, TopText, Wrapper } from "./style";
 import { Button } from "../../Generics/Button";
+import { useTranslation } from "react-i18next";
 
 const Hero = () => {
+  const { t } = useTranslation();
   return (
     <Container>
       <Wrapper>
-        <TopText>New Arrivals</TopText>
+        <TopText>{t("hero.new_arrivals")}</TopText>
         <Title>
-          <Span>Best Practice</Span> This Year
+          <Span>{t("hero.best_practise")}</Span> {t("hero.this_year")}
         </Title>
-        <Text>
-          Shoomotic offers your very comfortable time on walking and exercises
-        </Text>
-        <Button b>Shop Now</Button>
+        <Text>{t("hero.shoomotic")}</Text>
+        <Button b>{t("hero.shop_now")}</Button>
       </Wrapper>
     </Container>
   );

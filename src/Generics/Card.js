@@ -1,6 +1,7 @@
 import React from "react";
 import { Rate } from "antd";
 import { Button } from "./Button";
+import { useTranslation } from "react-i18next";
 import {
   BtnWrapper,
   CardContainer,
@@ -10,6 +11,7 @@ import {
 } from "../Components/NewArrivals/style";
 
 const Card = ({ image, title, price }) => {
+  const { t } = useTranslation()
   return (
     <CardContainer>
       <CardImg small src={image} alt="arrival" />
@@ -18,7 +20,7 @@ const Card = ({ image, title, price }) => {
         <Text>{title}</Text>
         <Text>${price}.00</Text>
         <BtnWrapper>
-          <Button>Buy Now</Button>
+          <Button>{t("buy_now")}</Button>
         </BtnWrapper>
       </CardWrapper>
     </CardContainer>

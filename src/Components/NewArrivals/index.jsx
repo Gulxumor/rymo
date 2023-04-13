@@ -2,16 +2,16 @@ import React from "react";
 import { products } from "../../utils/newArrivals";
 import Card from "../../Generics/Card";
 import { Container, Header, ImageWrapper, Wrapper } from "./style";
+import { useTranslation } from "react-i18next";
 
 const NewArrivals = () => {
+  const { t } = useTranslation();
   return (
     <Container>
       <Wrapper>
         <div>
-          <Header h>New Arrivals</Header>
-          <Header>
-            Here you can check out our new products with fair price on rymo.
-          </Header>
+          <Header h>{t("hero.new_arrivals")}</Header>
+          <Header> {t("new_arrivals.description")}</Header>
         </div>
         <ImageWrapper>
           {products.map(
