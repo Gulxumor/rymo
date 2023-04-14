@@ -9,13 +9,13 @@ import {
   CardWrapper,
   Text,
 } from "../Components/NewArrivals/style";
-import { useNavigation } from "react-router-dom";
+// import { useNavigation } from "react-router-dom";
 
 const Card = ({ image, title, price }) => {
   const { t } = useTranslation();
-  const  navigate = useNavigation()
+  // const  navigate = useNavigation()
   return (
-    <CardContainer onClick={() => navigate("/product")} >
+    <CardContainer >
       <CardImg small src={image} alt="arrival" />
       <CardWrapper>
         <Rate allowHalf defaultValue={3} />

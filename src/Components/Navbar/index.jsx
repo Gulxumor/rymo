@@ -23,9 +23,9 @@ import {
 import { useTranslation } from "react-i18next";
 
 const Navbar = () => {
+  const { t, i18n } = useTranslation();
   const { navLink } = useNavigation();
   const navigate = useNavigate();
-
   const [open, setOpen] = useState(false);
   const [opening, setOpening] = useState(false);
   // =====================
@@ -67,7 +67,6 @@ const Navbar = () => {
       ),
     },
   ];
-  const { t, i18n } = useTranslation();
 
   return (
     <>
