@@ -58,6 +58,9 @@ export const en = {
         loading: "Loading"
 
     },
+    shop: {
+        title: "Our Products",
+    },
     Software_engineer: "Software Engineer",
     search: "Search",
     searching: "Searching",

@@ -1,11 +1,14 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
+import { useNavigation } from "react-router-dom";
 import Card from "../../Generics/Card";
-import { products } from "../../utils/newArrivals";
+import useProducts from "../../utils/newArrivals";
 import { Header, Container, Wrapper, ImageWrapper } from "../NewArrivals/style";
 
 const Watches = () => {
+  const { products } = useProducts();
   const { t } = useTranslation();
+  const navigate = useNavigation();
   return (
     <Container>
       <Wrapper>
@@ -14,10 +17,11 @@ const Watches = () => {
           <Header>{t("new_arrivals.description")} </Header>
         </div>
         <ImageWrapper>
-          {products.map(
+          {products()?.map(
             ({ id, title, rating, featuredImage, category, price }) =>
               category === "watches" && (
                 <Card
+                  onClick={() => navigate("/product")}
                   key={id}
                   image={featuredImage}
                   title={title}

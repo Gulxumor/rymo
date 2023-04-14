@@ -18,7 +18,7 @@ export const uz = {
         description: "Bu yerda siz bizning yangi mahsulotlarimizni rymo-da adolatli narxda ko'rishingiz mumkin.",
         sports_boots: "Sport botinkalari",
         sports_shoes: "Sport poyabzali",
-        sports_bugs: "Sport xatolari",
+        sports_bugs: "Sport sumkalari",
         sports_cap: "Sport qalpoqchasi"
     },
     sale: {
@@ -30,6 +30,9 @@ export const uz = {
     },
     shoes: {
         running_shoes: "Yugurish poyabzali"
+    },
+    shop: {
+        title: "Bizning mahsulotlarimiz",
     },
     footer: {
         fringilla: "FRINGILLA URNA PORTTITOR RHONCUS DOLOR PURUS LUCTUS VENENATIS LECTUS MAGNA FRINGILLA DIAM MOECENAS ULTRICIES MI EGET MAURIS.",

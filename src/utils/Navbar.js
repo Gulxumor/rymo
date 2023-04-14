@@ -37,7 +37,6 @@ function useNavigation() {   // hook create qilish, it must start with "use"
         { id: 5, title: t("nav_links.nav_links_signIn"), path: "/sign-in", element: <SignIn />, hidden: true, isPrivate: false },
         { id: 6, title: t("nav_links.nav_links_signUp"), path: "/sign-up", element: <SignUp />, hidden: true, isPrivate: false },
     ]
-
     return { navLink }
 }
 export default useNavigation

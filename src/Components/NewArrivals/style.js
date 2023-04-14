@@ -12,7 +12,7 @@ const Header = styled.p`
 const ImageWrapper = styled.div`
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap:${({ g }) => g ? "10px" : "20px"};
 `
 const Container = styled.div`
     width: 100%;

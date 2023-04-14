@@ -42,7 +42,8 @@ const Span = styled.span`
 `;
 const Text = styled.p`
     height: 48px;
-    max-width: 380px;
+    max-width: 450px;
+    width: 100%;
     margin:15px 0 ;
 
 `

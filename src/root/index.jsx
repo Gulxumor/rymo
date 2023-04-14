@@ -10,16 +10,16 @@ import { uz } from "../locale/uz/translation";
 import { ru } from "../locale/ru/translation";
 
 const Root = () => {
-  const token = JSON.parse(localStorage.getItem("token"));
-
-  const { navLink } = useNavigation();
-
   useEffect(() => {
     // language ni localstorage ga set qilish
     if (!localStorage.getItem("locale")) {
-      localStorage.setItem("locale", "uz");
+      localStorage.setItem("locale", "en");
+      window.location.reload();
     }
   }, []);
+
+  const token = JSON.parse(localStorage.getItem("token"));
+  const { navLink } = useNavigation();
 
   i18next.use(initReactI18next).init({
     //translation
