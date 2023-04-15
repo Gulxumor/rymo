@@ -10,11 +10,12 @@ export const Button = styled.button`
     gap: 12px;
     height: 40px;
     padding: 0px 18px;
-    width: 150px;
+    width: ${({ w }) => w ? "500px" : "150px"};
     outline: none;
     border: none;
     font-family: Nuckle;
     font-size: 16px;
+    font-weight: ${({ w }) => w ? "400" : ""};
     line-height: 19px;
     letter-spacing: 0.01em;
     text-transform: uppercase;

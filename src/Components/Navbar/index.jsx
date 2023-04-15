@@ -19,6 +19,7 @@ import {
   Img,
   Text,
   Madal,
+  Select,
 } from "./style";
 import { useTranslation } from "react-i18next";
 
@@ -28,6 +29,7 @@ const Navbar = () => {
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
   const [opening, setOpening] = useState(false);
+  const [confirmLoading, setConfirmLoading] = useState(false);
   // =====================
   const showDrawer = () => {
     navigate("/");
@@ -43,15 +45,21 @@ const Navbar = () => {
   const items = [
     {
       key: "1",
-      label: <div onClick={() => navigate("/profile")}>Profile</div>,
+      label: (
+        <div onClick={() => navigate("/profile")}>{t("account.profile")}</div>
+      ),
     },
     {
       key: "2",
-      label: <div onClick={() => navigate("/sign-in")}>Sign In</div>,
+      label: (
+        <div onClick={() => navigate("/sign-in")}>{t("account.signin")}</div>
+      ),
     },
     {
       key: "3",
-      label: <div onClick={() => navigate("/sign-up")}>Sign Up</div>,
+      label: (
+        <div onClick={() => navigate("/sign-up")}>{t("account.signup")}</div>
+      ),
     },
     {
       type: "divider",
@@ -61,50 +69,67 @@ const Navbar = () => {
       label: (
         <div style={{ display: "flex", alignItems: "center" }} onClick={logout}>
           <p>
-            <FiLogOut /> Log Out
+            <FiLogOut /> {t("account.log_out")}
           </p>
         </div>
       ),
     },
   ];
 
+  const handleOk = () => {
+    setConfirmLoading(true);
+    setTimeout(() => {
+      setOpen(false);
+      setConfirmLoading(false);
+    }, 2000);
+  };
+
   return (
     <>
       <Container>
         {/* Search */}
+
         <Madal
-          title="Search Product"
+          title={t("modal.title")}
           top
           open={open}
-          onOk={() => setOpen(false)}
+          onOk={handleOk}
           onCancel={() => setOpen(false)}
+          confirmLoading={confirmLoading}
           width={1000}
         >
           <Input type="text" placeholder={t("search")} />
         </Madal>
         {/* Search */}
+
         <Drawer
-          title="Products"
+          title={t("drawer.title")}
           placement="right"
           onClose={() => setOpening(false)}
           open={opening}
         >
           <hr />
-          <p>No Products Yet</p>
-          <p> Cart Totals</p>
+          <p>{t("drawer.empty")}</p>
+          <p>{t("drawer.card_total")}</p>
           <div className="footer">
             <hr />
             <div>
-              <p>Total</p>
+              <p>{t("drawer.total")}</p>
               <p>$0.00</p>
             </div>
-            <Button>Proceed to checkout</Button>
-            <Button>Continue shopping</Button>
+            <Button>{t("drawer.proceed")}</Button>
+            <Button>{t("drawer.continue")}</Button>
           </div>
         </Drawer>
 
         <Wrapper>
-          <Img src={logo} onClick={() => navigate("/")} />
+          <a
+            href="https://github.com/Gulxumor/rymo"
+            target={"_blank"}
+            rel="noreferrer"
+          >
+            <Img src={logo} onClick={() => navigate("/")} />
+          </a>
           {/* map qilish joyi */}
           <NavItems>
             {navLink().map(
@@ -128,7 +153,7 @@ const Navbar = () => {
           {/* map qilish joyi */}
           {/* icons */}
           <Icons>
-            <select
+            <Select
               defaultValue={localStorage.getItem("locale")}
               onChange={(e) => {
                 localStorage.setItem("locale", e.target.value);
@@ -138,7 +163,7 @@ const Navbar = () => {
               <option value="en">EN</option>
               <option value="uz">UZ</option>
               <option value="ru">RU</option>
-            </select>
+            </Select>
 
             <BiSearch onClick={() => setOpen(true)} className="nav_icon" />
             <AiOutlineHeart

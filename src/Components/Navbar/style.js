@@ -18,7 +18,10 @@ const Container = styled.div`
     font-size: 22px;
 }
 .nav_icon{
-    font-size: 24px;
+    user-select: none;
+    flex-shrink: 0;
+    font-size: 1.5rem; 
+    color: var(--black);
 }
 `;
 const Wrapper = styled.div`
@@ -41,7 +44,7 @@ const NavItem = styled.li`
     gap: 50px;
 `
 const Icons = styled.div`
-    width: 180px;
+    width: 200px;
     height: 48px;
     display: flex;
     align-items:center;
@@ -51,7 +54,6 @@ const Icons = styled.div`
 const Madal = styled(Modal)`
     width:50%;
 `
-
 const Input = styled.input`
     width: 100%;
     height:40px;
@@ -69,7 +71,14 @@ const Text = styled.p`
     text-decoration-style: solid;
 
 `
-export { Container, Text, Madal, Img, Input, Wrapper, Icons, NavItem, NavItems };
+const Select = styled.select`
+    border: none;
+    width: 50px;
+    font-size: 1rem; 
+
+`
+
+export { Container, Text, Select, Madal, Img, Input, Wrapper, Icons, NavItem, NavItems };
 
 
 /*  Media

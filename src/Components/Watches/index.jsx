@@ -20,6 +20,7 @@ const Watches = () => {
               category === "watches" && (
                 <Card
                   key={id}
+                  id={id}
                   image={featuredImage}
                   title={title}
                   price={price}

@@ -1,9 +1,9 @@
 import React from "react";
 import visa from "../../assets/images/logo/visa.jpg";
 import logo from "../../assets/images/logo/orange.png";
-import { featured, instagram } from "../../utils/footer";
+import { instagram } from "../../utils/footer";
 import { useTranslation } from "react-i18next";
-
+import useFooter from "../../utils/footer";
 import {
   Bottom,
   Container,
@@ -18,6 +18,7 @@ import {
 
 const Footer = () => {
   const { t } = useTranslation();
+  const { featured } = useFooter();
 
   return (
     <Container>
@@ -29,7 +30,7 @@ const Footer = () => {
           </Div>
           <Div>
             <Title>{t("footer.featured")}</Title>
-            {featured.map(
+            {featured().map(
               ({ featured, name, id }) =>
                 featured && <Text key={id}>{name}</Text>
             )}
@@ -44,7 +45,7 @@ const Footer = () => {
             <Text>example@gmail.com</Text>
           </Div>
           <Div>
-            <Title m>{ t("footer.instagram")}</Title>
+            <Title m>{t("footer.instagram")}</Title>
             <div className="div">
               {instagram.map(({ id, img }) => (
                 <Imgs key={id} src={img} className="img" />

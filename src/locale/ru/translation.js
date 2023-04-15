@@ -46,11 +46,14 @@ export const ru = {
         clothes: "Одежда",
         contact: "Связаться с нами",
         address: "Адрес",
-        street: "123 KO'CHA NOMI, SHAHAR, AQSH",
+        street: "123 Название улицы, города, США",
         phone: "Телефон",
         email: "Электронная почта",
         instagram: "Инстаграм",
         rights: "RYMO ECOMMERCE @ 2023. ВСЕ ПРАВА ЗАЩИЩЕНЫ"
+    },
+    sign_in: {
+        register: "У тебя есть аккаунт? Регистр"
     },
     sign_up: {
         login: "Авторизоваться",
@@ -59,11 +62,32 @@ export const ru = {
         name_placeholder: "Введите ваше имя",
         email_placeholder: "Введите адрес электронной почты",
         password_placeholder: "Введите ваш пароль",
-        loading: "Загрузка"
+        loading: "Загрузка",
+        sign_up: "У вас уже есть аккаунт? Авторизоваться",
+        register: "Регистр"
+    },
+    modal: {
+        title: "Поиск продукта",
+
+    },
+    drawer: {
+        title: "Продукты",
+        empty: "Товаров пока нет",
+        card_total: "Всего в корзине",
+        total: "Всего",
+        proceed: "Перейти к оформлению заказа",
+        continue: "Продолжить покупки",
+    },
+    account: {
+        profile: "Профиль",
+        signin: "Войти",
+        signup: "Зарегистрироваться",
+        log_out: "Выйти"
     },
     Software_engineer: "Инженер-программист",
     search: "Поиск",
     searching: "Идет поиск",
     go_back: "Возвращаться",
-    buy_now: "Купить сейчас"
+    buy_now: "Купить сейчас",
+
 }

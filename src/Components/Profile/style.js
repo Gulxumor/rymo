@@ -51,7 +51,8 @@ const Password = styled.p`
 const User = styled.img`
     width:200px;
     height:200px;
-    border:1px solid var(--black) ;
+    border:1px solid var(--black);
+    padding:10px;
 `
 
 export { Container, Div, Inner, Password, User, Name, Info, Wrapper };

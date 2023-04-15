@@ -31,6 +31,9 @@ export const en = {
     shoes: {
         running_shoes: "RUNNING SHOES"
     },
+    shop: {
+        title: "Our Products",
+    },
     footer: {
         fringilla: "FRINGILLA URNA PORTTITOR RHONCUS DOLOR PURUS LUCTUS VENENATIS LECTUS MAGNA FRINGILLA DIAM MOECENAS ULTRICIES MI EGET MAURIS.",
         featured: "Featured",
@@ -48,6 +51,9 @@ export const en = {
         instagram: "Instagram",
         rights: "RYMO ECOMMERCE @ 2023. ALL RIGHTS RESERVED"
     },
+    sign_in: {
+        register: "Do you have an account? Register"
+    },
     sign_up: {
         login: "Login",
         name: "Name:",
@@ -55,16 +61,31 @@ export const en = {
         name_placeholder: "Enter your name",
         email_placeholder: "Enter your email",
         password_placeholder: "Enter your password",
-        loading: "Loading"
-
+        loading: "Loading",
+        sign_up: "Do you already have an account? Login",
+        register: "Register"
     },
-    shop: {
-        title: "Our Products",
+    modal: {
+        title: "Search Products",
+    },
+    drawer: {
+        title: "Products",
+        empty: "No Products Yet",
+        card_total: "Cart Totals",
+        total: "Total",
+        proceed: "Proceed to checkout",
+        continue: "Continue shopping",
     },
     Software_engineer: "Software Engineer",
     search: "Search",
     searching: "Searching",
     go_back: "Go back",
-    buy_now: "Buy Now"
-  
+    buy_now: "Buy Now",
+    account: {
+        profile: "Profile",
+        signin: "Sign In",
+        signup: "Sign Up",
+        log_out: "Log Out"
+    },
+
 }

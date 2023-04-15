@@ -12,6 +12,7 @@ import SignIn from "../Components/SignIn/index.jsx"
 import SignUp from "../Components/SignUp/index.jsx"
 import Hero from "../Components/Hero/index.jsx"
 import { useTranslation } from "react-i18next"
+import SingleProduct from "../Components/SingleProduct/index.jsx"
 
 
 export const home = [
@@ -36,6 +37,9 @@ function useNavigation() {   // hook create qilish, it must start with "use"
         { id: 4, title: t("nav_links.nav_links_profile"), path: "/profile", element: <Profile />, hidden: true, isPrivate: true },
         { id: 5, title: t("nav_links.nav_links_signIn"), path: "/sign-in", element: <SignIn />, hidden: true, isPrivate: false },
         { id: 6, title: t("nav_links.nav_links_signUp"), path: "/sign-up", element: <SignUp />, hidden: true, isPrivate: false },
+        { id: 8, title: t("nav_links.nav_links_shop"), path: "/shop/:id", element: <SingleProduct />, hidden: true, isPrivate: true },
+
+
     ]
     return { navLink }
 }

@@ -1,7 +1,10 @@
 import React, { useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
-import { Button, Container, Input, Text, Title, Wrapper } from "./style.js";
+import { Input, Text, Title, Wrapper } from "../SignIn/style.js";
+import { Container } from "./style.js";
+import { Button } from "../../Generics/Button";
+import Footer from "../Footer";
 
 const SignUp = () => {
   const nameRef = useRef();
@@ -9,7 +12,7 @@ const SignUp = () => {
   const passwordRef = useRef();
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-
+  const { t } = useTranslation();
   const onSave = () => {
     setLoading(true);
     setTimeout(() => {
@@ -22,44 +25,41 @@ const SignUp = () => {
         })
       );
       setLoading(false);
-      window.location.reload();
+      // window.location.reload();
       navigate("/shop");
     }, 2000);
   };
 
-  const { t } = useTranslation();
-
   return (
-    <Container>
-      <Wrapper>
-        <Text>{t("sign_up.login")}</Text>
-        <div>
-          <Title>{t("sign_up.name")}</Title>
-          <Input placeholder="Enter your name" ref={nameRef} type="text" />
-        </div>
-        <div>
-          <Title>{t("footer.email")}</Title>
+    <>
+      <Container>
+        <Wrapper>
+          <Title>{t("sign_up.register")}</Title>
+          <Input
+            placeholder={t("sign_up.name_placeholder")}
+            ref={nameRef}
+            type="text"
+          />
           <Input
             placeholder={t("sign_up.email_placeholder")}
             ref={emailRef}
             type="email"
           />
-        </div>
-        <div>
-          <Title>{t("sign_up.password")}</Title>
           <Input
             placeholder={t("sign_up.password_placeholder")}
             ref={passwordRef}
             type="password"
           />
-        </div>
-        <div>
-          <Button type="submit" onClick={onSave} id="button">
-            {loading ? `${t("sign_up.loading")}...` : t("sign_up.login")}
+          <Button b w type="submit" onClick={onSave}>
+            {loading ? `${t("sign_up.loading")}...` : t("sign_up.register")}
           </Button>
-        </div>
-      </Wrapper>
-    </Container>
+          <Text onClick={() => navigate("/sign-in")}>
+            {t("sign_up.sign_up")}
+          </Text>
+        </Wrapper>
+      </Container>
+      <Footer />
+    </>
   );
 };
 
