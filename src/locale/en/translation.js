@@ -19,7 +19,8 @@ export const en = {
         sports_boots: "Sports Boots",
         sports_shoes: "Sports Shoes",
         sports_bugs: "Sports Bugs",
-        sports_cap: "Sports Cap"
+        sports_cap: "Sports Cap",
+        mock_desc: "If you too are a t-shirt seller and sell them online, you must ensure you’re displaying them right. In other words, you have a higher chance of customers buying your t-shirts if you use a fitting product description. A good product description can get your business more customers.",
     },
     sale: {
         title: "MID SEASON'S SALE",
@@ -76,16 +77,16 @@ export const en = {
         proceed: "Proceed to checkout",
         continue: "Continue shopping",
     },
-    Software_engineer: "Software Engineer",
-    search: "Search",
-    searching: "Searching",
-    go_back: "Go back",
-    buy_now: "Buy Now",
     account: {
         profile: "Profile",
         signin: "Sign In",
         signup: "Sign Up",
-        log_out: "Log Out"
+        log_out: "Log Out",
+        software_engineer: "Software Engineer",
     },
+    search: "Search",
+    searching: "Searching",
+    go_back: "Go back",
+    buy_now: "Buy Now",
 
 }

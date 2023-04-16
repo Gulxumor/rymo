@@ -1,5 +1,7 @@
 import React from "react";
 import Footer from "../Footer";
+import logo from "../../assets/images/logo/user.png";
+import { useTranslation } from "react-i18next";
 import {
   Container,
   Div,
@@ -10,8 +12,6 @@ import {
   User,
   Wrapper,
 } from "./style";
-import logo from "../../assets/images/logo/user.png";
-import { useTranslation } from "react-i18next";
 
 const Profile = () => {
   const user = JSON.parse(localStorage.getItem("token"));
@@ -25,7 +25,7 @@ const Profile = () => {
             <User src={logo} />
             <Div>
               <Name>{user?.username}</Name>
-              <Info>{t("Software_engineer")}</Info>
+              <Info>{t("account.software_engineer")}</Info>
               <Info>{user?.email}</Info>
               <Password>{user?.password}</Password>
             </Div>

@@ -19,7 +19,8 @@ export const uz = {
         sports_boots: "Sport botinkalari",
         sports_shoes: "Sport poyabzali",
         sports_bugs: "Sport sumkalari",
-        sports_cap: "Sport qalpoqchasi"
+        sports_cap: "Sport qalpoqchasi",
+        mock_desc: `Agar siz ham futbolka sotuvchisi bo'lsangiz va ularni onlayn sotsangiz, ularni to'g'ri ko'rsatayotganingizga ishonch hosil qilishingiz kerak. Boshqacha qilib aytganda, agar siz mos mahsulot tavsifidan foydalansangiz, mijozlar sizning futbolkalaringizni sotib olish ehtimoli yuqori bo'ladi. Yaxshi mahsulot tavsifi sizning biznesingizga ko'proq mijozlarni jalb qilishi mumkin.`,
     },
     sale: {
         title: "O'RTA MAVSUM SOTISH",
@@ -81,9 +82,9 @@ export const uz = {
         profile: "Hisob",
         signin: "Tizimga kirish",
         signup: "Ro'yxatdan o'tish",
-        log_out: "Chiqish"
+        log_out: "Chiqish",
+        software_engineer: "Dastur muhandisi",
     },
-    Software_engineer: "Dastur muhandisi",
     search: "Qidirish",
     searching: "Qidirilmoqda",
     go_back: "Ortga qaytish",
