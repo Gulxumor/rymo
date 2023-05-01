@@ -20,6 +20,25 @@ const Wrapper = styled.div`
     margin:0 auto ;
     display:flex;
     align-items:center;
+
+    
+  @media (max-width: 884px) {
+    padding: 0px 20px;
+    gap: 30px;
+
+  }
+
+  @media (max-width: 676px) {
+    padding: 0px 20px;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  @media (max-width: 676px) {
+    padding: 0px 20px;
+  }
+  
 `;
 const Div = styled.div`
    display:flex;

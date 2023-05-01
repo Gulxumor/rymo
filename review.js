@@ -31,15 +31,18 @@
  14. song ozgartirmoqchi bolgan section nomi yozilib obj scope ochiladi va ichiga translationlar yozib chiqiladi. M. nav_links: {nav_links_home: "Uy", nav_links_shop:"Bozor"},
  15. translatsiyalar yozib bolingandan song locale folderi ichidagi folderni, rootdagi resources objecti ichidagi translation ga value qilib import qilinadi
  16. ishlatish uchun const {t} = usetranslation() deb yoziladi yani ozgaruvchiga tenglanadi va i18next dan import qilinadi
- 17. song ishlatilatiladigan joyga huddi js kod yozganimizdek scope ochiladi va t() deb yoziladi. qavs ichiga esa tarjima qilinadiga sozni obkelamiz like {t("nav_links.nav_links_home")}. song qaysi tilda bolsa shu qismga biriktirilgan sozni osha tilda chiqarib beradi
+ 17. song ishlatilatiladigan joyga huddi js kod yozganimizdek scope ochiladi va t() deb yoziladi. qavs ichiga esa tarjima qilinadiga sozni obkelamiz like {t("nav_links.nav_links_home")}. 
+     song qaysi tilda bolsa shu qismga biriktirilgan sozni osha tilda chiqarib beradi
  18. selectda tanlangan til tasir qilishi uchun  selectga quyidagilar yoziladi. Ya'ni change bolgandagi holati localstorage ga locale nomi bilan saqlab qoyiladi
  ?   <select onChange={(e) => localStorage.setItem("locale", e.target.value)}> options  </select>
  19. Browserga otib select qilib korganda localstorage ga key:locale, value: tanlagan optionimiz bolishi kerak
  20. Selectda tanlaganimizda til avtomatik ozgarishi uchun lng va fallback ga
  ?  localStorage.getItem("locale") || "en"
- ..  deb yozamiz. || belgilanganiga sabab shuki tanlagan tilimiz malum sabablarga kora ishlamay qolishi mumkin. Shu xolatlarda avtomatik ingliz tilini olib ketadi.
+ ..  deb yozamiz. || belgilanganiga sabab shuki tanlagan tilimiz malum sabablarga kora ishlamay qolishi mumkin. 
+     Shu xolatlarda avtomatik ingliz tilini olib ketadi.
  21. Browserga 1-marta kirgandagi default qiymatni kiritish uchun quyidagi amallar bajariladi.
  ?   useEffect(()=>{if (!localStorage.getItem("locale")) {localStorage.setItem("locale", "uz")}},[])
+ 22. Davomi bor :)
 */
 
 /* // TODO  ============= Redux toolkit
@@ -108,8 +111,21 @@
 
  */
 
-
-
-
 // useselector - malumot olish
 // o'zgartirish-useDispatch
+
+/* // TODO  ============= useQuery
+  !  useQuery => useEffect va fetch ni o'ziga 1 ta qilib keshlab oladi
+  !  va uni istalgan joyimizda ishlatib ketishga imkon beradi
+  ?  1. npm i react-query
+     2. index.js ga otiladi va queryClient va queryClientProvider import qilinadi
+  ?  3. const query = new QueryClient()
+        queryClient ozgaruvchiga tenglanadi va root queryClientProvider bilan o'rab qo'yiladi.
+     4. queryClientProvider ning client degan atributiga ozgaruvchi yozib qoyiladi.
+     5. query ishlatiladigan componentga o'tiladi va useQuery() ozgaruvchiga tenglanadi
+        useQuery 3 ta parametr oladi, 1 => uni nomi , 2 => callback funksiya boladi, shu joyda sorov yuborish mumkin,
+        3=> obj boladi. keepPreviousData:true boladi. oldingi data ni saqlab turadi, refetchOnWindowFocus:false boladi
+        
+
+
+*/

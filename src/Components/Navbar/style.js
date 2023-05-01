@@ -32,6 +32,19 @@ const Wrapper = styled.div`
     justify-content: space-between;
     font-weight: 700;
     margin: 0 auto;
+
+      @media (max-width: 1339px) {
+    height: 90px;
+  }
+
+  @media (max-width: 884px) {
+    height: 80px;
+  }
+
+  @media (max-width: 676px) {
+    height: 60px;
+  }
+
 `;
 const NavItems = styled.ul`
     display: flex;
@@ -63,6 +76,13 @@ const Input = styled.input`
 `
 const Img = styled.img`
     margin-top:10px;
+    
+  @media (max-width: 884px) {
+    width: 130px;
+  }
+  @media (max-width: 676px) {
+    display: none;
+  }
 `
 const Text = styled.p`
     height: 33px;
@@ -75,7 +95,6 @@ const Select = styled.select`
     border: none;
     width: 50px;
     font-size: 1rem; 
-
 `
 
 export { Container, Text, Select, Madal, Img, Input, Wrapper, Icons, NavItem, NavItems };

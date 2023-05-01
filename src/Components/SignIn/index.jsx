@@ -22,7 +22,7 @@ const SignIn = () => {
         })
       );
       setLoading(false);
-      window.location.reload();
+      // window.location.reload();
       navigate("/shop");
     }, 2000);
   };

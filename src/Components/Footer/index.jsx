@@ -10,6 +10,7 @@ import {
   Div,
   Img,
   Imgs,
+  InstagramImages,
   Text,
   Title,
   Top,
@@ -46,18 +47,18 @@ const Footer = () => {
           </Div>
           <Div>
             <Title m>{t("footer.instagram")}</Title>
-            <div className="div">
+            <InstagramImages>
               {instagram.map(({ id, img }) => (
                 <Imgs key={id} src={img} className="img" />
               ))}
-            </div>
+            </InstagramImages>
           </Div>
         </Top>
-        <Bottom>
-          <Img w src={visa} alt="visa" />
-          <Text>{t("footer.rights")}</Text>
-        </Bottom>
       </Wrapper>
+      <Bottom>
+        <Img w src={visa} alt="visa" />
+        <Text>{t("footer.rights")}</Text>
+      </Bottom>
     </Container>
   );
 };

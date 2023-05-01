@@ -19,6 +19,18 @@ const Wrapper = styled.div`
     display: flex;
     flex-direction:column;
     justify-content:center;
+
+    @media (max-width: 1339px) {
+    padding: 0 30px;
+  }
+
+  @media (max-width: 884px) {
+    padding: 0 20px;
+  }
+
+  @media (max-width: 676px) {
+    padding: 0 10px;
+  }
 `;
 
 const TopText = styled.h4`
@@ -45,6 +57,10 @@ const Text = styled.p`
     max-width: 450px;
     width: 100%;
     margin:15px 0 ;
+
+    @media (max-width: 428px) {
+    max-width: 230px;
+  }
 
 `
 

@@ -5,11 +5,11 @@ const Img = styled.img`
     height:${({ w }) => w ? "29px" : "60px"};
 `;
 const Container = styled.div`
-    width: 100%;
+    width: 100vw;
     background-color: #212121;
     height: 540px; 
     text-transform: uppercase;
-    margin: 10px auto 0 auto;
+    /* margin: 10px auto 0 auto; */
     
     .div{
         display: grid;
@@ -19,11 +19,30 @@ const Container = styled.div`
 const Wrapper = styled.div`
     max-width: 1440px;
     width:100%;
-    height: 540px;
     margin: 0 auto;
     padding: 50px 131px 0 131px;
     display: flex;
     flex-direction:column;
+
+  @media (max-width: 1339px) {
+    padding: 50px 30px;
+  }
+
+  @media (max-width: 884px) {
+    padding: 40px 20px;
+    grid-template-columns: 1.5fr 1fr 1fr;
+  }
+
+  @media (max-width: 676px) {
+    padding: 30px 20px;
+    grid-template-columns: 1.5fr 1fr;
+  }
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
+
+
 `;
 const Top = styled.div`
     display: grid;
@@ -31,10 +50,28 @@ const Top = styled.div`
     gap: 50px;
 `;
 const Bottom = styled.div`
-    margin-top:50px ;
-    display: flex;
-    justify-content: space-between;
-    padding: 20px 20px 0 20px;
+  max-width: 1440px;
+  width: 100%;
+  padding: 60px 131px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @media (max-width: 1339px) {
+    padding: 50px 30px;
+  }
+
+  @media (max-width: 884px) {
+    padding: 30px 20px;
+    grid-template-columns: 1.5fr 1fr 1fr;
+  }
+
+  @media (max-width: 676px) {
+    padding: 20px 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
 `;
 const Text = styled.li`
     display: block;
@@ -56,6 +93,15 @@ const Imgs = styled.img`
     gap:10px;
     max-width: 100px;
     width: 100%;
-
 `;
-export { Container, Wrapper, Div, Top, Bottom, Text, Img, Imgs, Title };
+
+const InstagramImages = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+   
+`
+
+export { Container, InstagramImages, Wrapper, Div, Top, Bottom, Text, Img, Imgs, Title };
