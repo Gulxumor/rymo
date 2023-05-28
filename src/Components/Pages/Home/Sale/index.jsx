@@ -1,6 +1,6 @@
 // import { Container, Span, Title, Text, Wrapper } from "../Hero/style";
 import { Container, Title, Text, Wrapper } from "./style";
-import { Button } from "../../Generics/Button";
+import { Button } from "../../../../generics/Button";
 import { useTranslation } from "react-i18next";
 
 const Sale = () => {

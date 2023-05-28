@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Span, Title, Text, TopText, Wrapper } from "./style";
-import { Button } from "../../Generics/Button";
+import { Button } from "../../../../generics/Button";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 

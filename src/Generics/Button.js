@@ -3,9 +3,7 @@ import styled from "styled-components";
 export const Button = styled.button`
     background: ${({ b }) => b ? 'var(--black)' : 'var(--orange)'};
     display: flex;
-    -webkit-box-align: center;
     align-items: center;
-    -webkit-box-pack: center;
     justify-content: center;
     gap: 12px;
     height: 40px;
@@ -15,7 +13,7 @@ export const Button = styled.button`
     border: none;
     font-family: Nuckle;
     font-size: 16px;
-    font-weight: ${({ w }) => w ? "400" : ""};
+    font-weight: ${({ w }) => w && "400"};
     line-height: 19px;
     letter-spacing: 0.01em;
     text-transform: uppercase;

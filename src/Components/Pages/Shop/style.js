@@ -2,9 +2,7 @@ import styled, { css } from 'styled-components';
 export const common = css`
     width: 825px;  
     text-align: left;
-
 `
-
 const Container = styled.div`
     width: 100%;
 

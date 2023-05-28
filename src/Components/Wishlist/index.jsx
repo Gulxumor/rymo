@@ -1,7 +1,7 @@
 import React from "react";
 // import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { Card } from "../../Generics/Card/index.jsx";
+import { Card } from "../../generics/Card/index.jsx";
 import useProducts from "../../utils/newArrivals.js";
 import { Container, Description, Products, Title, Wrapper } from "./style";
 

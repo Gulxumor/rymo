@@ -37,7 +37,6 @@ const Title = styled.p`
     font-size: 25px;
     font-weight: 600;
     height: 38px;
-    width: 69px;
     margin-block-start: 0.83em;
     margin-block-end: 0.83em;
     margin-inline-start: 0px;
@@ -45,7 +44,6 @@ const Title = styled.p`
 `
 const Text = styled.p`
     height: 24px;
-    width: 320px;
     margin: 0 auto;
 
     :hover{

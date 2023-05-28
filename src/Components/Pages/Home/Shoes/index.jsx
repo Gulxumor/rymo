@@ -1,6 +1,6 @@
 import React from "react";
-import useProducts from "../../utils/newArrivals";
-import Card from "../../Generics/Card";
+import useProducts from "../../../../utils/newArrivals";
+import Card from "../../../../generics/Card";
 import { Header, Container, Wrapper, ImageWrapper } from "../NewArrivals/style";
 import { useTranslation } from "react-i18next";
 

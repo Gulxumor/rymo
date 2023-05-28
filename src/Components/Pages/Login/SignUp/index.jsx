@@ -3,8 +3,8 @@ import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import { Input, Text, Title, Wrapper } from "../SignIn/style.js";
 import { Container } from "./style.js";
-import { Button } from "../../Generics/Button";
-import Footer from "../Footer";
+import { Button } from "../../../../generics/Button";
+import Footer from "../../../Footer";
 
 const SignUp = () => {
   const nameRef = useRef();

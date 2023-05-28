@@ -1,14 +1,7 @@
 import React from "react";
-import {
-  Container,
-  Content,
-  ImageWrapper,
-  Wrapper,
-  Title,
-  Price,
-} from "./style";
+import { Container, ImageWrapper, Title, Price } from "./style";
 import { Rate } from "antd";
-import {Button} from "../Button"
+import { Button } from "../Button";
 export const Card = ({ product, onClick }) => {
   // Create our number formatter.
   const formatter = new Intl.NumberFormat("en-US", {
@@ -20,7 +13,7 @@ export const Card = ({ product, onClick }) => {
   });
   return (
     <Container onClick={onClick}>
-      <Wrapper>
+      <Container.Wrapper>
         <ImageWrapper>
           <ImageWrapper.Image
             src={product?.featuredImage}
@@ -28,17 +21,17 @@ export const Card = ({ product, onClick }) => {
             loading="lazy"
           />
         </ImageWrapper>
-        <Content>
-            <Rate
-              name="half-rating"
-              defaultValue={product?.rating[0]}
-              precision={product?.rating[1]}
-            />
+        <Container.Wrapper.Content>
+          <Rate
+            name="half-rating"
+            defaultValue={product?.rating[0]}
+            precision={product?.rating[1]}
+          />
           <Title>{product?.title}</Title>
           <Price>{formatter.format(product?.price)}</Price>
           <Button type="secondary">Buy Now</Button>
-        </Content>
-      </Wrapper>
+        </Container.Wrapper.Content>
+      </Container.Wrapper>
     </Container>
   );
 };

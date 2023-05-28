@@ -51,7 +51,7 @@ const NavItems = styled.ul`
     align-items:center;
     gap: 50px;
 `
-const NavItem = styled.li`
+NavItems.NavItem = styled.li`
     list-style-type: none;
     display: flex;
     gap: 50px;
@@ -97,7 +97,7 @@ const Select = styled.select`
     font-size: 1rem; 
 `
 
-export { Container, Text, Select, Madal, Img, Input, Wrapper, Icons, NavItem, NavItems };
+export { Container, Text, Select, Madal, Img, Input, Wrapper, Icons, NavItems };
 
 
 /*  Media

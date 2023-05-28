@@ -14,10 +14,9 @@ const Container = styled.div`
     }
   }
 
-
 `
 
-const Wrapper = styled.div`
+Container.Wrapper = styled.div`
   max-width: 400px;
   width: 100%;
 `
@@ -30,7 +29,7 @@ ImageWrapper.Image = styled.img`
   width: 100%;
 `
 
-const Content = styled.div`
+Container.Wrapper.Content = styled.div`
   padding-top: 20px;
   padding-bottom: 20px;
   display: flex;
@@ -49,4 +48,4 @@ const Price = styled.h4`
 
 
 
-export { Container, Wrapper, ImageWrapper, Content, Title, Price }
+export { Container, ImageWrapper, Title, Price }

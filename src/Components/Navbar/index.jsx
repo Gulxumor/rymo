@@ -6,13 +6,12 @@ import { MdShoppingBasket } from "react-icons/md";
 import { BsPersonCircle } from "react-icons/bs";
 import { FiLogOut } from "react-icons/fi";
 import { Drawer, Dropdown } from "antd";
-import { Button } from "../../Generics/Button";
+import { Button } from "../../generics/Button";
 import logo from "../../assets/images/logo/rymo-logo-black.png";
-import useNavigation from "../../utils/Navbar";
+import useNavigation from "../../utils/navbar";
 import {
   Container,
   NavItems,
-  NavItem,
   Icons,
   Input,
   Wrapper,
@@ -136,7 +135,7 @@ const Navbar = () => {
             {navLink().map(
               ({ id, title, hidden, path }) =>
                 !hidden && (
-                  <NavItem key={id}>
+                  <NavItems.NavItem key={id}>
                     <NavLink
                       style={({ isActive }) => ({
                         color: isActive ? "var(--orange)" : "var(--grey)",
@@ -147,7 +146,7 @@ const Navbar = () => {
                     >
                       <Text>{title}</Text>
                     </NavLink>
-                  </NavItem>
+                  </NavItems.NavItem>
                 )
             )}
           </NavItems>

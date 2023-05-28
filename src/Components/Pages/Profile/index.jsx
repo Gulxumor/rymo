@@ -1,6 +1,6 @@
 import React from "react";
-import Footer from "../Footer";
-import logo from "../../assets/images/logo/user.png";
+import Footer from "../../Footer";
+import logo from "../../../assets/images/logo/user.png";
 import { useTranslation } from "react-i18next";
 import {
   Container,

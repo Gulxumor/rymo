@@ -1,7 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import Card from "../../Generics/Card";
-import useProducts from "../../utils/newArrivals";
+import Card from "../../../../generics/Card";
+import useProducts from "../../../../utils/newArrivals";
 import { Header, Container, Wrapper, ImageWrapper } from "../NewArrivals/style";
 
 const Watches = () => {

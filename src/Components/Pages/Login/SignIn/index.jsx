@@ -2,8 +2,8 @@ import React, { useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import { Container, Input, Text, Title, Wrapper } from "./style";
-import { Button } from "../../Generics/Button";
-import Footer from "../Footer";
+import { Button } from "../../../../generics/Button";
+import Footer from "../../../Footer";
 
 const SignIn = () => {
   const emailRef = useRef();

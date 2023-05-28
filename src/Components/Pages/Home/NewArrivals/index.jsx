@@ -1,8 +1,8 @@
 import React from "react";
-import Card from "../../Generics/Card";
+import Card from "../../../../generics/Card";
 import { Container, Header, ImageWrapper, Wrapper } from "./style";
 import { useTranslation } from "react-i18next";
-import useProducts from "../../utils/newArrivals";
+import useProducts from "../../../../utils/newArrivals";
 
 const NewArrivals = () => {
   const { products } = useProducts();

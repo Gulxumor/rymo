@@ -1,5 +1,5 @@
 import React from "react";
-import { logo } from "../../utils/logo";
+import { logo } from "../../../../utils/logo";
 import { Container, Img, LogoWrapper } from "./style";
 
 const Brands = () => {

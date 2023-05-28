@@ -8,7 +8,7 @@ import {
   CardImg,
   CardWrapper,
   Text,
-} from "../Components/NewArrivals/style";
+} from "../components/Pages/Home/NewArrivals/style";
 import { useNavigate } from "react-router-dom";
 
 const Card = ({ image, title, price, id }) => {
@@ -23,7 +23,7 @@ const Card = ({ image, title, price, id }) => {
         <Text>{title}</Text>
         <Text>${price}.00</Text>
         <BtnWrapper>
-        <Button onClick={() => navigate(`/shop/${id}`)} >{t("buy_now")}</Button>
+        <Button onClick={() => navigate(`/shop/${id}`)}>{t("buy_now")}</Button>
         </BtnWrapper>
       </CardWrapper>
     </CardContainer>
