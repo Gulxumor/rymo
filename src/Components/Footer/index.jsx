@@ -1,4 +1,3 @@
-import React from "react";
 import visa from "../../assets/images/logo/visa.jpg";
 import logo from "../../assets/images/logo/orange.png";
 import { instagram } from "../../utils/footer";

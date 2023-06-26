@@ -1,8 +1,9 @@
-import React, { useTransition } from "react";
+import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";
 import "./style.css";
+
 const NotFound = () => {
-  const { t } = useTransition();
+  const { t } = useTranslation();
   return (
     <div className="not-found">
       <NavLink to={"/"}>

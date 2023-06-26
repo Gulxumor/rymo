@@ -1,17 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,700;1,600;1,800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,700;1,600;1,800&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: var(--font-family);
+  font-family: "Poppins", sans-serif;
 }
 
+html {
+  overflow-x: hidden;
+}
 :root {
   --white: rgb(255, 255, 255);
   --orange: rgb(251, 119, 75);
   --black: rgb(2, 1, 1);
   --gray: rgb(97, 99, 101);
   --blue: rgb(0, 0, 255);
-  --font-family: "Poppins", sans-serif;
+  /* --font-family: "Poppins", sans-serif; */
 }

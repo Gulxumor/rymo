@@ -1,5 +1,5 @@
 import i18next from "i18next";
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { initReactI18next } from "react-i18next";
 import { Navigate, Route, Routes } from "react-router-dom";
 import Navbar from "../components/Navbar";
@@ -14,8 +14,8 @@ const Root = () => {
   const { navLink } = useNavigation();
   // language ni localstorage ga set qilish
   useEffect(() => {
-    if (!localStorage.getItem("locale")) {
-      localStorage.setItem("locale", "en");
+    if (!localStorage.getItem("lang")) {
+      localStorage.setItem("lang", "en");
       window.location.reload();
     }
   }, []);
@@ -27,8 +27,8 @@ const Root = () => {
       uz: { translation: uz },
       ru: { translation: ru },
     },
-    lng: localStorage.getItem("locale") || "en",
-    fallback: localStorage.getItem("locale") || "en",
+    lng: localStorage.getItem("lang") || "en",
+    fallback: localStorage.getItem("lang") || "en",
   });
 
   return (

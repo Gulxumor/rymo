@@ -1,4 +1,3 @@
-import React from "react";
 import { Container, Span, Title, Text, TopText, Wrapper } from "./style";
 import { Button } from "../../../../generics/Button";
 import { useTranslation } from "react-i18next";
@@ -6,9 +5,9 @@ import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
   const token = JSON.parse(localStorage.getItem("token"));
-
   const { t } = useTranslation();
   const navigate = useNavigate();
+
   return (
     <Container>
       <Wrapper>

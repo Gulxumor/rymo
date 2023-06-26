@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import { Container, Input, Text, Title, Wrapper } from "./style";
@@ -11,6 +11,7 @@ const SignIn = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const { t } = useTranslation();
+
   const onSave = () => {
     setLoading(true);
     setTimeout(() => {

@@ -125,7 +125,4 @@
      5. query ishlatiladigan componentga o'tiladi va useQuery() ozgaruvchiga tenglanadi
         useQuery 3 ta parametr oladi, 1 => uni nomi , 2 => callback funksiya boladi, shu joyda sorov yuborish mumkin,
         3=> obj boladi. keepPreviousData:true boladi. oldingi data ni saqlab turadi, refetchOnWindowFocus:false boladi
-        
-
-
 */

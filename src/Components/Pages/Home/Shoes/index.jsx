@@ -1,4 +1,3 @@
-import React from "react";
 import useProducts from "../../../../utils/newArrivals";
 import Card from "../../../../generics/Card";
 import { Header, Container, Wrapper, ImageWrapper } from "../NewArrivals/style";

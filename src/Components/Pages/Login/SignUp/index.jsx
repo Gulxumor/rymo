@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import { Input, Text, Title, Wrapper } from "../SignIn/style.js";
@@ -13,6 +13,7 @@ const SignUp = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const { t } = useTranslation();
+  
   const onSave = () => {
     setLoading(true);
     setTimeout(() => {

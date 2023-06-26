@@ -1,14 +1,12 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { NavLink, Outlet, useNavigate } from "react-router-dom";
-import { BiSearch } from "react-icons/bi";
-import { AiOutlineHeart } from "react-icons/ai";
-import { MdShoppingBasket } from "react-icons/md";
+import { BiSearch, BiHeart, BiShoppingBag, BiLogOut } from "react-icons/bi";
 import { BsPersonCircle } from "react-icons/bs";
-import { FiLogOut } from "react-icons/fi";
 import { Drawer, Dropdown } from "antd";
 import { Button } from "../../generics/Button";
 import logo from "../../assets/images/logo/rymo-logo-black.png";
 import useNavigation from "../../utils/navbar";
+import { useTranslation } from "react-i18next";
 import {
   Container,
   NavItems,
@@ -20,7 +18,6 @@ import {
   Madal,
   Select,
 } from "./style";
-import { useTranslation } from "react-i18next";
 
 const Navbar = () => {
   const { t, i18n } = useTranslation();
@@ -69,7 +66,7 @@ const Navbar = () => {
       label: (
         <div style={{ display: "flex", alignItems: "center" }} onClick={logout}>
           <p>
-            <FiLogOut /> {t("account.log_out")}
+            <BiLogOut /> {t("account.log_out")}
           </p>
         </div>
       ),
@@ -128,7 +125,7 @@ const Navbar = () => {
             target={"_blank"}
             rel="noreferrer"
           >
-            <Img src={logo} onClick={() => navigate("/")} />
+            <Img src={logo} />
           </a>
           {/* map qilish joyi */}
           <NavItems>
@@ -139,7 +136,7 @@ const Navbar = () => {
                     <NavLink
                       style={({ isActive }) => ({
                         color: isActive ? "var(--orange)" : "var(--grey)",
-                        fontWeight: isActive ? `800` : "500",
+                        // fontWeight: isActive ? `800` : "500",
                       })}
                       className="nav_link"
                       to={path}
@@ -154,9 +151,9 @@ const Navbar = () => {
           {/* icons */}
           <Icons>
             <Select
-              defaultValue={localStorage.getItem("locale")}
+              defaultValue={localStorage.getItem("lang")}
               onChange={(e) => {
-                localStorage.setItem("locale", e.target.value);
+                localStorage.setItem("lang", e.target.value);
                 i18n.changeLanguage(e.target.value);
               }}
             >
@@ -166,11 +163,11 @@ const Navbar = () => {
             </Select>
 
             <BiSearch onClick={() => setOpen(true)} className="nav_icon" />
-            <AiOutlineHeart
+            <BiHeart
               className="nav_icon"
               onClick={() => navigate("/wishlist")}
             />
-            <MdShoppingBasket onClick={showDrawer} className="nav_icon" />
+            <BiShoppingBag onClick={showDrawer} className="nav_icon" />
             <Dropdown
               menu={{
                 items,

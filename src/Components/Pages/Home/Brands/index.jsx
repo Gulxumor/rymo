@@ -1,4 +1,3 @@
-import React from "react";
 import { logo } from "../../../../utils/logo";
 import { Container, Img, LogoWrapper } from "./style";
 

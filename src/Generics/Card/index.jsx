@@ -1,4 +1,3 @@
-import React from "react";
 import { Container, ImageWrapper, Title, Price } from "./style";
 import { Rate } from "antd";
 import { Button } from "../Button";
@@ -18,7 +17,6 @@ export const Card = ({ product, onClick }) => {
           <ImageWrapper.Image
             src={product?.featuredImage}
             alt={product?.title || "card"}
-            loading="lazy"
           />
         </ImageWrapper>
         <Container.Wrapper.Content>
